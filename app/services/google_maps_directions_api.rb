@@ -5,15 +5,17 @@ class GoogleMapsScraper
   # bars will be an array of bars
   def initialize(bars)
     @bars = bars
+    @gmaps = GoogleMapsService::Client.new(key: ENV['GMAPS_API_KEY'])
   end
 
-  def routes
-gmaps = GoogleMapsService::Client.new(key: ENV['GMAPS_API_KEY'])
+  def distances
+    routes = []
+    coordinates = @bars.map { |bar| lat: bar.latitude, lng: bar.longitude }
 
-routes = gmaps.directions(
-    'Ebertystrasse 54, Berlin, Germany',
-    'Rudi-Dutschke_strasse 26, Berlin, Germany',
-    mode: 'walking',
-    alternatives: false)
+    (coordinates.length - 1).times do |ind|
+      routes << @gmaps.directions(coordinate[ind], coordinate[ind + 1], mode: 'walking', alternatives: false)
+    end
 
+    return routes
+  end
 end
