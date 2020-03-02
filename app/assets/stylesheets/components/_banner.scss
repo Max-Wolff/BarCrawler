@@ -48,6 +48,13 @@
   opacity: 0;
 }
 
-.container-header h1 {
+.container-header {
+  h1 {
   text-align: center;
+  }
+  a {
+    display: block;
+  }
 }
+
+

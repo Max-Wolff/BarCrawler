@@ -19,6 +19,11 @@ gem 'google_maps_service'
 # Gem for geocoding
 gem 'geocoder'
 
+# handling the authentication for the foursquare2 API
+gem 'oauth2'
+# foursquare 2
+gem 'foursquare2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
