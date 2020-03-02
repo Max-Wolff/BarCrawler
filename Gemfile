@@ -17,6 +17,11 @@ gem 'webpacker'
 # To Use the Google Maps API: Find walking distance between two points
 gem 'google_maps_service'
 
+# handling the authentication for the foursquare2 API
+gem 'oauth2'
+# foursquare 2
+gem 'foursquare2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
