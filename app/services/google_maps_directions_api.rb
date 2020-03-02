@@ -1,5 +1,13 @@
 require 'google_maps_service'
 
+class GoogleMapsScraper
+
+  # bars will be an array of bars
+  def initialize(bars)
+    @bars = bars
+  end
+
+  def routes
 gmaps = GoogleMapsService::Client.new(key: ENV['GMAPS_API_KEY'])
 
 routes = gmaps.directions(
@@ -8,4 +16,4 @@ routes = gmaps.directions(
     mode: 'walking',
     alternatives: false)
 
-puts routes
+end
