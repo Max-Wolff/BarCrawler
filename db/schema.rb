@@ -10,9 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_03_02_135150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.float "rating"
+    t.string "address"
+    t.string "price"
+    t.string "picture_url"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drink_stops", force: :cascade do |t|
+    t.bigint "drink_id"
+    t.bigint "stop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drink_id"], name: "index_drink_stops_on_drink_id"
+    t.index ["stop_id"], name: "index_drink_stops_on_stop_id"
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.string "picture_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.bigint "group_id"
+    t.boolean "admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_members_on_group_id"
+  end
+
+  create_table "stops", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "bar_id"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_stops_on_bar_id"
+    t.index ["group_id"], name: "index_stops_on_group_id"
+  end
+
+  add_foreign_key "drink_stops", "drinks"
+  add_foreign_key "drink_stops", "stops"
+  add_foreign_key "members", "groups"
+  add_foreign_key "stops", "bars"
+  add_foreign_key "stops", "groups"
 end
