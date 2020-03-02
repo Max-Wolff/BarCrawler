@@ -14,6 +14,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+# To Use the Google Maps API: Find walking distance between two points
+gem 'google_maps_service'
 
 # handling the authentication for the foursquare2 API
 gem 'oauth2'
