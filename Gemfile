@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 # To Use the Google Maps API: Find walking distance between two points
 gem 'google_maps_service'
+# Gem for geocoding
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

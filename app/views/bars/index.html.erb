@@ -1,3 +1,10 @@
-<% @bars.each do |bar| %>
-  <%= bar %>
-<% end %>
+<div class="bar-selection">
+  <div class="sidebar">
+    <h2>Crazy Filters</h2>
+  </div>
+  <div class="map-placeholder">
+    <% @bars.each do |bar| %>
+      <%= render 'shared/bar-card', bar: bar %>
+    <% end %>
+  </div>
+</div>
