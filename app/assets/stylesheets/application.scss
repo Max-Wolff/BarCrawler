@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.home {
+  background: #0C223F;
+  height: 100vh;
+  h1 {
+    font-size: 50px;
+  }
+}
