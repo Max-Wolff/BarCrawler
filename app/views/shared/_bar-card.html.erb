@@ -1,0 +1,25 @@
+<div class="bar-card">
+  <% bar = Bar.first %>
+  <div class="card-img" style="background-image: url(<%= bar.picture_url %>)"></div>
+  <h4><%= bar.name %></h4>
+  <p><%= bar.address %></p>
+  <div class="rating-price-info">
+    <p>
+    <% bar.rating.to_i.times do %>
+      <i class="fas fa-beer full-beer"></i>
+    <% end %>
+    <% if (bar.rating % 1) >= 0.5 %>
+      <i class="fas fa-beer half-beer"></i>
+      <% (4 - bar.rating.to_i).times do %>
+        <i class="fas fa-beer empty-beer"></i>
+      <% end %>
+    <% else %>
+      <% (5 - bar.rating.to_i).times do %>
+        <i class="fas fa-beer empty-beer"></i>
+      <% end %>
+    <% end %>
+    </p>
+    <p class="card-price"><%= bar.price %></p>
+  </div>
+
+</div>
