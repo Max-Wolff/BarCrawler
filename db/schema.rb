@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_135150) do
+ActiveRecord::Schema.define(version: 2020_03_02_181049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2020_03_02_135150) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.string "open_until"
+    t.string "open_weekly"
+    t.boolean "open_today"
+    t.string "url"
   end
 
   create_table "drink_stops", force: :cascade do |t|
