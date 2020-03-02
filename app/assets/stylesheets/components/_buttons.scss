@@ -1,8 +1,54 @@
 .btn-home-address {
   color: white;
-  border: 1px solid white;
+  border: 1px solid $corona-blue;
+  border-radius: 50px;
+  padding: 16px 35px;
+  background: $corona-blue;
+  margin-bottom: 10px;
+  font-weight: lighter;
 }
 
-.btn-home-address {
+.btn-home-address:hover {
+  text-shadow: none;
   text-decoration: none;
+  color: white;
+  opacity: 0.9;
+}
+
+.btn-home-code {
+  color: white;
+  border: 1px solid white;
+  padding: 16px 35px;
+  opacity: 1;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.btn-home-code:hover{
+  text-decoration: none;
+  background: $corona-gold;
+  text-shadow: none;
+}
+
+
+.btn-main {
+  color: white;
+  border: 1px solid white;
+  padding: 16px 35px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  margin-top: 10px;
+  transition: background-color .3s ease;
+  transition: text-shadow .3s ease;
+  transition: border .3s ease;
+}
+
+.btn-main:hover {
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: $corona-blue;
+  border: 1px solid $corona-gold;
+  text-shadow: none;
 }
