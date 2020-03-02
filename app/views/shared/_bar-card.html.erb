@@ -1,10 +1,9 @@
 <div class="bar-card">
-  <% bar = Bar.first %>
   <div class="card-img" style="background-image: url(<%= bar.picture_url %>)"></div>
   <h4><%= bar.name %></h4>
   <p><%= bar.address %></p>
   <div class="rating-price-info">
-    <p>
+    <p class="card-rating">
     <% bar.rating.to_i.times do %>
       <i class="fas fa-beer full-beer"></i>
     <% end %>
@@ -19,6 +18,7 @@
       <% end %>
     <% end %>
     </p>
+    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar.open_until %></p>
     <p class="card-price"><%= bar.price %></p>
   </div>
 
