@@ -15,6 +15,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# handling the authentication for the foursquare2 API
+gem 'oauth2'
+# foursquare 2
+gem 'foursquare2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
