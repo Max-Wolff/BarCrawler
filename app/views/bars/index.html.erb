@@ -1,6 +1,56 @@
 <div class="bar-selection">
   <div class="sidebar">
-    <h2>Crazy Filters</h2>
+
+    <form action="/bars" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
+      Location: <input class="form-control string required simple_form search" type="text"  name="search[query]" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
+
+      Categories: <br>
+      <input type="checkbox" id="selections" name="all_bars" value="Bars">
+      <label for="all_bars">Bars</label><br>
+
+      <input type="checkbox" id="selections" name="all_breweries" value="Breweries">
+      <label for="all_breweries">Breweries</label><br>
+
+      <input type="checkbox" id="selections" name="all_lounges" value="Lounges">
+      <label for="all_lounges">Lounges</label><br>
+
+      <input type="checkbox" id="selections" name="all_nightclubs" value="Nightclubs">
+      <label for="all_nightclubs">Nightclubs</label><br>
+
+      Price Range: <br>
+      <fieldset>
+      <input type="radio" name="price-range" id="least-expensive" value="€">
+      <label for="least-expensive"><i class="fas fa-euro-sign"></i></label><br>
+
+      <input type="radio" name="price-range" id="inexpensive" value="€€">
+      <label for="inexpensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+
+      <input type="radio" name="price-range" id="expensive" value="€€€">
+      <label for="expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+
+      <input type="radio" name="price-range" id="most-expensive" value="€€€€">
+      <label for="most-expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+      </fieldset>
+
+      Radius: <br>
+
+      <div class="slider-container">
+        <div class="range-slider">
+          <span id="rs-bullet" class="rs-label">0</span>
+          <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="2000">
+
+        </div>
+
+        <div class="box-minmax">
+          <span>0</span><span>2000</span>
+        </div>
+
+      </div> <br>
+
+      Date: <input type="text" name="bar[date]" id="bar_date"> <br>
+      <input type="submit" name="commit" value="Save Bar" data-disable-with="Save Bar">
+    </form>
+
   </div>
   <div class="map-placeholder">
     <% @bars_array.each do |bar| %>
