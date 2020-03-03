@@ -22,7 +22,7 @@
     <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until] %></p>
     <p class="card-price">
       <% if bar[:price].nil? == false %>
-        <% bar[:price].times do %>
+        <% bar[:price].to_i.times do %>
         <i class="fas fa-euro-sign"></i>
         <% end %>
       <% end %>
