@@ -22,11 +22,5 @@ class BarsController < ApplicationController
   def update
     @bar = Bar.find(params[:id])
     @bar.selected = !@bar.selected
-    hash_one[:latitude] = 52.507348
-    hash_one[:longitude] = 13.392555
-    hash_one[:latitude] = 52.523461
-    hash_two[:longitude] = 13.387356
-    @bars_array << Bar.create(hash_one)
-    @bars_array << Bar.create(hash_two)
   end
 end
