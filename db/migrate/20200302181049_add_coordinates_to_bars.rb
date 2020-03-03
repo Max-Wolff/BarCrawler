@@ -6,5 +6,6 @@ class AddCoordinatesToBars < ActiveRecord::Migration[5.2]
     add_column :bars, :open_weekly, :string
     add_column :bars, :open_today, :boolean
     add_column :bars, :url, :string
+    add_column :bars, :selected, :boolean, default: false
   end
 end
