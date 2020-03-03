@@ -19,7 +19,6 @@ bar_8 = Bar.create(name: "Thelonious Bar",rating: "2", address:"Weserstrasse 202
 bar_9 = Bar.create(name: "Klunkerkranich",rating: "1.5", address:"Karl-Marx-Str 62, 12043 Berlin", price:"$$", picture_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 1:00 AM", open_today: true)
 bar_10 = Bar.create(name: "Schwelgerei",rating: "5", address:"Flughafenstr. 49, 12053 Berlin", price:"$$", picture_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 1:00 AM", open_today: true)
 
-
 group_1 = Group.create(name:"Guys want fun",token:"")
 group_4 = Group.create(name:"The champions",token:"")
 
