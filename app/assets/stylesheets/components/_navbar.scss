@@ -10,3 +10,32 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#navbar-landing {
+  background: transparent;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 2em .5em 2em;
+  // margin-bottom: 20px;
+  transition: background-color 200ms linear;
+  z-index: 1;
+
+  #icon-home {
+    font-size: 3em;
+    color: #0C223F;
+  }
+}
+
+.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+.nav-avatar {
+  height:60px;
+}
+
+
