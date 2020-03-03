@@ -1,14 +1,20 @@
 require 'google_maps_service'
+require_relative 'brute_force_distance'
 
 class GoogleMapsScraper
-  attr_reader :distances
+  attr_reader :bar_order
 
   # bars will be an array of bars
   def initialize(bars)
     @bars = bars
     @gmaps = GoogleMapsService::Client.new(key: ENV['GMAPS_API_KEY'])
     @distances = request_distances
+
+    # brute_force returns a hash like this: {comb: [bar1, bar2, bar3], dist: 9999 }. dist is the time in seconds for the complete route
+    @bar_order = brute_force(@bars, @distances)
   end
+
+  private
 
   def request_distances
     distances = {}
