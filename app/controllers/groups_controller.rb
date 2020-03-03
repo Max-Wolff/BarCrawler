@@ -24,5 +24,6 @@ class GroupsController < ApplicationController
     end
 
     @group.save
+    redirect_to unique_group_path(params[:authenticity_token])
   end
 end
