@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_181049) do
     t.string "open_weekly"
     t.boolean "open_today"
     t.string "url"
+    t.boolean "selected", default: false
   end
 
   create_table "drink_stops", force: :cascade do |t|

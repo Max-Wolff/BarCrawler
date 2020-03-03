@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :bars, only: [:index]
+  resources :bars, only: [:index, :update]
   resources :drinks, only: [:index]
   resources :members, only: [:index, :new, :create]
   resources :groups, only: [:new, :create] do

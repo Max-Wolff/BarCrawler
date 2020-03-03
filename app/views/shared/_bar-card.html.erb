@@ -1,4 +1,8 @@
-<div class="bar-card">
+<% if bar.selected %>
+<div data-bar-id="<%= bar.id %>" class="bar-card selected">
+<% else %>
+<div data-bar-id="<%= bar.id %>" class="bar-card">
+<% end %>
   <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);background-size: contain;background-repeat: no-repeat;"></div>
   <h4><%= bar[:name] %></h4>
   <p><%= bar[:address] %></p>
