@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :groups, only: [:new, :create] do
     resources :stops, only: [:index, :show, :new, :create]
   end
+  get 'group/:token', to: 'group#show', as: 'unique_group'
 end
