@@ -15,3 +15,12 @@
 #group_name {
   height: 50px;
 }
+
+.radio-container {
+  display: flex;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+}
