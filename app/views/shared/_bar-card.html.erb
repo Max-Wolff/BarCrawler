@@ -1,4 +1,8 @@
-<div class="bar-card">
+<% if bar.selected %>
+<div data-bar-id="<%= bar.id %>" class="bar-card selected">
+<% else %>
+<div data-bar-id="<%= bar.id %>" class="bar-card">
+<% end %>
   <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);background-size: contain;background-repeat: no-repeat;"></div>
   <h4><%= bar[:name] %></h4>
   <p><%= bar[:address] %></p>
@@ -20,8 +24,8 @@
     </p>
     <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until] %></p>
     <p class="card-price">
-      <% if bar[:price].nil? == false %>
-        <% bar[:price].times do %>
+      <% if bar[:price].to_i.nil? == false %>
+        <% bar[:price].to_i.times do %>
         <i class="fas fa-euro-sign"></i>
         <% end %>
       <% end %>
