@@ -62,9 +62,13 @@
     </form>
 
   </div>
-  <div class="map-placeholder">
+    <div class="map-placeholder" id="map" style="width: 75vw; height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+    <div class="cards-container-index">
+  <div class="map-container">
     <% @bars_array.each do |bar| %>
       <%= link_to (render 'shared/bar-card', bar: bar), bar, method: :patch, remote: true %>
     <% end %>
-  </div>
+    </div>
+    </div>
 </div>
