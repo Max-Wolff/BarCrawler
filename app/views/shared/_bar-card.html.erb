@@ -4,6 +4,7 @@
   <p><%= bar[:address] %></p>
   <div class="rating-price-info">
     <p class="card-rating">
+      <%= bar[:rating] %>
     <% bar[:rating].to_i.times do %>
       <i class="fas fa-beer full-beer"></i>
     <% end %>
