@@ -1,6 +1,15 @@
 <div class="bar-selection">
   <div class="sidebar">
-    <h2>Crazy Filters</h2>
+
+    <%= form_for :bar do |f| %>
+      Address: <%= f.text_field :address %>
+      Price Range: <%= f.text_field :price %>
+      Radius: <%= f.text_field :radius %>
+      Category: <%= f.text_field :category %>
+      Date: <%= f.text_field :date %>
+      <%= f.submit %>
+    <% end %>
+
   </div>
   <div class="map-placeholder">
     <% @bars_array.each do |bar| %>
