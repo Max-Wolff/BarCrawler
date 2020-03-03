@@ -23,7 +23,7 @@ class GoogleMapsScraper
       temp = {}
       @bars[(ind + 1)..].each do |other|
         # route.first[:legs].first[:duration][:value] returns duration in seconds
-        temp[other] = @gmaps.directions({ bar.latitude, bar.longitude }, { other.latitude, other.longitude }, mode: 'walking', alternatives: false).first[:legs].first[:duration][:value]
+        temp[other] = @gmaps.directions({ lat: bar.latitude, lng: bar.longitude }, { lat: other.latitude, lng: other.longitude }, mode: 'walking', alternatives: false).first[:legs].first[:duration][:value]
       end
       distances[bar] = temp
     end

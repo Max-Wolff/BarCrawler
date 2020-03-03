@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @bars = Bar.geocoded.first(5)
     @group = Group.create(token: params[:authenticity_token], name: params[:group][:name])
 
     scraper = GoogleMapsScraper.new(@bars)
