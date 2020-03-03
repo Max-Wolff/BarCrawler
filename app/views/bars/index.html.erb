@@ -2,41 +2,49 @@
   <div class="sidebar">
 
     <form action="/bars" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
-      Location: <input class="form-control string required simple_form search" type="text"  name="search[query]" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
+      <h4>Location: </h4>
 
-      Categories: <br>
-      <input type="checkbox" id="selections" name="all_bars" value="Bars">
-      <label for="all_bars">Bars</label><br>
+      <input class="form-control string required simple_form search" type="text"  name="search[query]" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
 
-      <input type="checkbox" id="selections" name="all_breweries" value="Breweries">
-      <label for="all_breweries">Breweries</label><br>
+      <h4>Categories: </h4>
+      <div class="checkbox-container">
 
-      <input type="checkbox" id="selections" name="all_lounges" value="Lounges">
-      <label for="all_lounges">Lounges</label><br>
+      <div><input type="checkbox" id="selections" name="all_bars" value="Bars">
+      <label for="all_bars">Bars</label></div>
 
-      <input type="checkbox" id="selections" name="all_nightclubs" value="Nightclubs">
-      <label for="all_nightclubs">Nightclubs</label><br>
+      <div><input type="checkbox" id="selections" name="all_breweries" value="Breweries">
+      <label for="all_breweries">Breweries</label></div></div>
 
-      Price Range: <br>
+      <div class="checkbox-container">
+      <div><input type="checkbox" id="selections" name="all_lounges" value="Lounges">
+      <label for="all_lounges">Lounges</label></div>
+
+      <div><input type="checkbox" id="selections" name="all_nightclubs" value="Nightclubs">
+      <label for="all_nightclubs">Nightclubs</label></div></div>
+
+      <h4>Price Range</h4>
       <fieldset>
-      <input type="radio" name="price-range" id="least-expensive" value="€">
-      <label for="least-expensive"><i class="fas fa-euro-sign"></i></label><br>
+      <div class="radio-container">
+      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="least-expensive" value="€">
+      <label for="least-expensive"><i class="fas fa-euro-sign"></i></label></div>
 
-      <input type="radio" name="price-range" id="inexpensive" value="€€">
-      <label for="inexpensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="inexpensive" value="€€">
+      <label for="inexpensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
 
-      <input type="radio" name="price-range" id="expensive" value="€€€">
-      <label for="expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="expensive" value="€€€">
+      <label for="expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
 
-      <input type="radio" name="price-range" id="most-expensive" value="€€€€">
-      <label for="most-expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label><br>
+      <div><input type="radio" name="price-range" id="most-expensive" value="€€€€">
+      <label for="most-expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
+      </div>
       </fieldset>
 
-      Radius: <br>
+      <h4>Radius:</h4>
+      <br>
 
       <div class="slider-container">
         <div class="range-slider">
-          <span id="rs-bullet" class="rs-label">0</span>
+          <span id="rs-bullet" class="rs-label" style="margin-top: 15vh;">0</span>
           <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="2000">
 
         </div>
@@ -47,7 +55,8 @@
 
       </div> <br>
 
-      Date: <input type="text" name="bar[date]" id="bar_date"> <br>
+      <h4>Date:</h4>
+      <input type="text" name="bar[date]" id="bar_date"> <br>
       <input type="submit" name="commit" value="Save Bar" data-disable-with="Save Bar">
     </form>
 
