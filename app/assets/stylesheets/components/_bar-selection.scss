@@ -2,14 +2,19 @@
   display: flex;
   width: 100%;
   height: 100vh;
+  padding: 1vw;
 
   .sidebar {
-    width: 20%;
+    width: 25%;
     height: 100%;
+
+    h4 {
+      margin: 15px auto;
+    }
   }
 
   .map-placeholder {
-    width: 80%;
+    width: 75%;
     padding: 2em;
     height: 100%;
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d8/Berlin_Subdivisions.svg');

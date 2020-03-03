@@ -21,6 +21,10 @@
 }
 
 .checkbox-container {
+  display: block;
+  width: 50%;
+}
+
+.checkbox-wrapper {
   display: flex;
-  justify-content: space-between;
 }
