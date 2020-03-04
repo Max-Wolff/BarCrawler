@@ -15,6 +15,9 @@ class BarsController < ApplicationController
 
   def update
     @bar = Bar.find(params[:id])
-    @bar.selected = !@bar.selected
+    group = @bar.stops.last.group
+    if group.bars.where(selected: true) < 7 || @bar.selected = false
+      @bar.selected = !@bar.selected
+    end
   end
 end
