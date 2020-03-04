@@ -11,8 +11,8 @@
 @import "radius-slider";
 @import "form";
 
-
-@media(max-width: 400px) {
+//Smallest devices
+@media(min-width: 100px) and (max-width: 576px) {
   .bar-selection {
     width:100%;
     flex-direction: column;
@@ -37,34 +37,9 @@
   }
 }
 
-@media(max-width: 700px) {
-  .bar-selection {
-    flex-direction: column;
-    align-items: center;
-    height: 200vh;
-  }
-  .sidebar{
-    width:80%;
 
-  }
-  .map-placeholder {
-    width:80%;
-    flex-direction: column;
-    align-items: center;
-  }
-  .bar-card {
-    display:flex;
-    flex-direction: column;
-    margin-bottom:10px;
-    align-self: center;
-    justify-content: flex-start;
-  }
 
-  .bar-card p{
-    align-self: center;
-  }
 
-}
 
 
 @import "map";
