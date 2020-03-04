@@ -1,4 +1,5 @@
 require_relative '../services/google_maps_directions_api'
+require_relative '../services/mapbox_directions_api'
 
 class GroupsController < ApplicationController
 
@@ -17,7 +18,17 @@ class GroupsController < ApplicationController
 
   def shared
     @group = Group.find_by_token(params[:token])
-    @bars = @group.bars.where(selected: true)
+    @bars = @group.bars
+    @stops = @group.stops
+    @route = directions(@bars)
+
+    @markers = @bars.map do |bar|
+      {
+        lat: bar[:latitude],
+        lng: bar[:longitude],
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+      }
+    end
   end
 
   def edit
@@ -25,8 +36,8 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @bars = Bar.geocoded.first(5)
-    @group = Group.create(token: params[:authenticity_token], name: params[:group][:name])
+    @bars = Group.find(params[:id]).bars.geocoded.where(selected: true)
+    @group = Group.new(token: params[:authenticity_token], name: params[:group][:name])
 
     scraper = GoogleMapsScraper.new(@bars)
     order = scraper.bar_order[:comb]
