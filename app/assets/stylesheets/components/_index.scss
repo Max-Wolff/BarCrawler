@@ -11,6 +11,8 @@
 @import "radius-slider";
 @import "form";
 @import "shared-view";
+@import "nav_during_crawl";
+@import "map";
 
 
 //Smallest devices
@@ -37,12 +39,17 @@
   .rating-price-info {
     justify-content:center;
   }
+
+ #group_name {
+  width:40vh;
+  align-self: center;
+ }
+
+
+.form-actions .btn-home-address{
+  width:40vh;
+  // align-self: center;
+  align-self:center;
 }
 
-
-
-
-
-
-@import "map";
-
+}

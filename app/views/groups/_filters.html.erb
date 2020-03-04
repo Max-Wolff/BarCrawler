@@ -3,7 +3,7 @@
 <form action="/bars" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
 
   <h4>Location: </h4>
-  <input class="form-control string required simple_form search" type="text"  name="search[query]" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
+  <input class="form-control string required simple_form search" type="text"  name="address" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
 
   <h4>Categories: </h4>
   <div class="checkbox-wrapper">
@@ -11,20 +11,20 @@
     <div class="checkbox-container">
 
       <div class="d-block text-center"> <div><div><label for="all_bars" style="margin: 0px;"><i class="fas fa-glass-cheers"></i></label></div><div><label for="all_bars" style="margin: 0px;">Bars</label></div></div>
-      <input type="checkbox" id="all_bars" name="all_bars" value="Bars"></div>
+      <input type="checkbox" id="all_bars" name="select_bars" value="4bf58dd8d48988d116941735" checked></div>
 
       <div class="d-block text-center"> <div><div><label for="all_lounges" style="margin: 0px;"><i class="fas fa-glass-martini-alt"></i></label></div><div><label for="all_lounges" style="margin: 0px;">Lounges</label></div></div>
-      <input type="checkbox" id="all_lounges" name="all_lounges" value="Lounges"></div>
+      <input type="checkbox" id="all_lounges" name="select_lounges" value="4bf58dd8d48988d121941735"></div>
 
     </div>
 
     <div class="checkbox-container">
 
       <div class="d-block text-center"> <div><div><label for="all_breweries" style="margin: 0px;"><i class="fas fa-beer"></i></label></div><div><label for="all_breweries" style="margin: 0px;">Breweries</label></div></div>
-      <input type="checkbox" id="all_breweries" name="all_breweries" value="Breweries"></div>
+      <input type="checkbox" id="all_breweries" name="select_breweries" value="50327c8591d4c4b30a586d5d"></div>
 
       <div class="d-block text-center"> <div><div><label for="all_nightclubs" style="margin: 0px;"><i class="fas fa-compact-disc"></i></label></div><div><label for="all_nightclubs" style="margin: 0px;">Nightclubs</label></div></div>
-      <input type="checkbox" id="all_nightclubs" name="all_nightclubs" value="Nightclubs"></div>
+      <input type="checkbox" id="all_nightclubs" name="select_nightclubs" value="4bf58dd8d48988d11f941735"></div>
 
     </div>
   </div>
@@ -33,16 +33,16 @@
 
   <fieldset>
     <div class="radio-container">
-      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="least-expensive" value="€">
+      <div style="margin-right: 10%;"><input type="radio" name="price_tier" id="least-expensive" value="1">
       <label for="least-expensive"><i class="fas fa-euro-sign"></i></label></div>
 
-      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="inexpensive" value="€€">
+      <div style="margin-right: 10%;"><input type="radio" name="price_tier" id="inexpensive" value="2">
       <label for="inexpensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
 
-      <div style="margin-right: 15px;"><input type="radio" name="price-range" id="expensive" value="€€€">
+      <div style="margin-right: 10%;"><input type="radio" name="price_tier" id="expensive" value="3">
       <label for="expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
 
-      <div><input type="radio" name="price-range" id="most-expensive" value="€€€€">
+      <div><input type="radio" name="price_tier" id="most-expensive" value="4" checked>
       <label for="most-expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label></div>
     </div>
   </fieldset>
@@ -53,7 +53,7 @@
   <div class="slider-container">
     <div class="range-slider">
       <span id="rs-bullet" class="rs-label" style="margin-bottom: 15px;margin-left: -4.6vw;left: 60%;">3</span>
-      <input id="rs-range-line" class="rs-range" type="range" value="3" min="1" max="5">
+      <input id="rs-range-line" name="radius" class="rs-range" type="range" value="3" min="1" max="5">
 
     </div>
 

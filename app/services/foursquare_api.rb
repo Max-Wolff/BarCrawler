@@ -52,14 +52,14 @@ def foursquare
       photo_url = ""
     end
 
-    @bar_hash = {name: bar_name, address: bar_address, latitude: bar_lat, longitude: bar_lng, category: bar_category, open_until: open_hours_until, open_weekly: weekly_opening_hours, open_today?: open_today, price: price_tier, rating: rating, photo_url: photo_url}
+    @bar_hash = {name: bar_name, address: bar_address, latitude: bar_lat, longitude: bar_lng, category: bar_category, open_until: open_hours_until, open_weekly: weekly_opening_hours, open_today: open_today, price: price_tier, rating: rating, photo_url: photo_url}
     @bars_array << @bar_hash
   end
   @bars_array
 end
 
 def call_foursquare_search_api
-  @locations = @client.search_venues(:ll => '52.507405,13.392278', :radius => '2000', :limit => '5', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
+  @locations = @client.search_venues(:ll => '52.507405,13.392278', :radius => '2000', :limit => '3', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
 end
 
 
