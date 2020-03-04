@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 
-def foursquare
+def foursquare_api_call
   @bar_hash = {}
   @bars_array = []
   @client = Foursquare2::Client.new(:client_id => ENV['CLIENT_ID_KEY'], :client_secret => ENV['CLIENT_SECRET_KEY'])

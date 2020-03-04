@@ -1,16 +1,23 @@
 require_relative '../services/foursquare_api'
+require_relative '../services/foursquare_modifier_api'
 
 class BarsController < ApplicationController
 
   def index
-    # Comment out to use foursquare API --> Only Max as of 04/March
-    # foursquare
+    # <<<< FOURSQUARE >>>>>
+    # foursquare_api_call
 
-    # In Progress for altering foursquare dynamically
     # form_params
     # if form_params["commit"] == "Search"
-    #   puts "Hello World"
+    #   foursquare_modified_api_call(form_params)
+    #   @group = Group.last
+    #   @group.stops.delete_all
+    #   @filtered_bars.each do |bar_hash|
+    #     bar = Bar.create(bar_hash)
+    #     Stop.create(group: @group, bar: bar)
+    #   end
     # end
+    # <<<< FOURSQUARE >>>>>
 
     bars = Bar.first(10)
     @group = Group.create
@@ -18,12 +25,15 @@ class BarsController < ApplicationController
       Stop.create(group: @group, bar: bar)
     end
 
-    # FOURSQUARE
-    # @group = Group.create
-    # @bars_array.each do |bar_hash|
-    #   bar = Bar.create(bar_hash)
-    #   Stop.create(group: @group, bar: bar)
+    # <<<< FOURSQUARE >>>>>
+    # if @group.nil? == true
+    #   @group = Group.create
+    #   @bars_array.each do |bar_hash|
+    #     bar = Bar.create(bar_hash)
+    #     Stop.create(group: @group, bar: bar)
+    #   end
     # end
+    # <<<< FOURSQUARE >>>>>
 
     redirect_to show_group_path(@group)
   end
