@@ -26,12 +26,18 @@
 
 #spin-the-wheel {
   border-radius: 50%;
-  background: #C4C4C4;
+  background: $corona-gold;
   height: 120px;
   width: 120px;
   left: 128px;
   top: 721px;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bolder;
+  color: $corona-blue;
+}
+
+
+#spin-the-wheel:hover {
+  text-decoration: none;
 }
