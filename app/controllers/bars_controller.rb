@@ -3,18 +3,27 @@ require_relative '../services/foursquare_api'
 class BarsController < ApplicationController
 
   def index
-    foursquare
-    form_params
-    if form_params["commit"] == "Search"
-      puts "Hello World"
-    end
+    # Comment out to use foursquare API --> Only Max as of 04/March
+    # foursquare
 
+    # In Progress for altering foursquare dynamically
+    # form_params
+    # if form_params["commit"] == "Search"
+    #   puts "Hello World"
+    # end
 
+    bars = Bar.first(10)
     @group = Group.create
-    @bars_array.each do |bar_hash|
-      bar = Bar.create(bar_hash)
+    bars.each do |bar|
       Stop.create(group: @group, bar: bar)
     end
+
+    # FOURSQUARE
+    # @group = Group.create
+    # @bars_array.each do |bar_hash|
+    #   bar = Bar.create(bar_hash)
+    #   Stop.create(group: @group, bar: bar)
+    # end
 
     redirect_to show_group_path(@group)
   end
