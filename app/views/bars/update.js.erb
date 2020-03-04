@@ -1,2 +1,11 @@
-document.querySelector("[data-bar-id='<%= @bar.id %>']")
-  .classList.toggle('selected');
+if (document.querySelectorAll(".selected").length < 7) {
+  document.querySelector("[data-bar-id='<%= @bar.id %>']")
+    .classList.toggle('selected');
+  document.getElementById('selection').innerText = `${document.querySelectorAll(".selected").length} / 7`;
+} else {
+  document.querySelector("[data-bar-id='<%= @bar.id %>']")
+    .classList.remove('selected');
+  document.getElementById('selection').innerText = `${document.querySelectorAll(".selected").length} / 7`;
+}
+
+

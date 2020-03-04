@@ -10,5 +10,31 @@
 @import "search";
 @import "radius-slider";
 @import "form";
+@import "nav_during_crawl";
 @import "map";
-@import "nav_during_crawl"
+
+//Smallest devices
+@media(min-width: 100px) and (max-width: 576px) {
+  .bar-selection {
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+  }
+  .sidebar{
+    width:100%;
+
+  }
+  .map-placeholder {
+    width:80%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bar-card {
+    margin-bottom:10px;
+    align-self: center;
+  }
+  .rating-price-info {
+    justify-content:center;
+  }
+}
