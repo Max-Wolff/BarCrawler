@@ -1,5 +1,5 @@
 <div class="header-during-crawl">
-  <h2> <%= @group.name %>'s Crawl (Stop 1/7) </h2> <!-- bar stop controller -->
+  <h2> <%= group.name %>'s Crawl (<%= stop.rank%> / <%= @last_stop%>)</h2>
 </div>
 
 <div class="navigation-display">
@@ -8,8 +8,12 @@
 
 <div class="footer-during-crawl">
   <div class="footer-navigation">
-    <a href="#"><i class="fas fa-arrow-circle-left nav-left"></i></a>  <!-- bar stop controller -->
-    <a href="#" id="spin-the-wheel">Drink Selector<i class="fas fa-glass-cheers"></i></a>
-    <a href="#"><i class="fas fa-arrow-circle-right nav-right"></i></a> <!-- bar stop controller +1 -->
+    <% unless stop.rank == 1 %>
+      <%= link_to ("<i class='fas fa-arrow-circle-left'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank - 1)) %>
+    <% end %>
+    <%= link_to ("<i class='fas fa-glass-cheers'></i> Selector").html_safe, unique_group_stop_path, id: "spin-the-wheel" %>
+    <% unless stop.rank == @last_stop %>
+      <%= link_to ("<i class='fas fa-arrow-circle-right'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank + 1)) %>
+    <% end %>
   </div>
 </div>
