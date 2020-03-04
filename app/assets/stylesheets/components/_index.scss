@@ -51,4 +51,23 @@
   align-self:center;
 }
 
+.home-banner  p {
+  // text-align: center;
+  font-size: 25px;
+   width:40vh;
+  // align-self:center;
+  }
+
+.home-button {
+    width:60vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+ .home-button .btn-home-address{
+  margin-bottom: 1em;
+ }
+
+
 }
