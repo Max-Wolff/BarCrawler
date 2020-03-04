@@ -10,6 +10,8 @@
 @import "search";
 @import "radius-slider";
 @import "form";
+@import "nav_during_crawl";
+@import "map";
 
 //Smallest devices
 @media(min-width: 100px) and (max-width: 576px) {
@@ -36,11 +38,3 @@
     justify-content:center;
   }
 }
-
-
-
-
-
-
-@import "map";
-

@@ -12,16 +12,21 @@ class BarsController < ApplicationController
     hash_two = {name: "Muted Horn",rating: 4.2, address:"Flughafenstr 49, 12053 Berlin", price: 2, picture_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 12:00 PM", open_today: true}
     bar1 = Bar.create(hash_one)
     bar2 = Bar.create(hash_two)
+    bars = Bar.first(10)
     @group = Group.create
-    Stop.create(group: @group, bar: bar1)
-    Stop.create(group: @group, bar: bar2)
+    bars.each do |bar|
+      Stop.create(group: @group, bar: bar)
+    end
 
     redirect_to show_group_path(@group)
   end
 
   def update
     @bar = Bar.find(params[:id])
-    @bar.selected = !@bar.selected
+    group = @bar.stops.last.group
+    if group.bars.where(selected: true) < 7 || @bar.selected = false
+      @bar.selected = !@bar.selected
+    end
   end
 
   private
