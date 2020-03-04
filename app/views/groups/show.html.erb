@@ -6,7 +6,7 @@
     </div>
     <div class="cards-container-index">
   <div class="map-container">
-    <% @bars_array.each do |bar| %>
+    <% @bars.each do |bar| %>
       <%= link_to (render 'shared/bar-card', bar: bar), bar, method: :patch, remote: true %>
     <% end %>
     </div>
