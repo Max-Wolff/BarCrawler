@@ -17,19 +17,18 @@ ActiveRecord::Schema.define(version: 2020_03_02_181049) do
 
   create_table "bars", force: :cascade do |t|
     t.string "name"
-    t.float "rating"
     t.string "address"
-    t.string "price"
-    t.string "picture_url"
-    t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "category"
     t.string "open_until"
     t.string "open_weekly"
     t.boolean "open_today"
-    t.string "url"
+    t.integer "price"
+    t.float "rating"
+    t.string "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "selected", default: false
   end
 
