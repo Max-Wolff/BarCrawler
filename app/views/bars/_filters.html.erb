@@ -1,3 +1,5 @@
+<div class="form-container">
+
 <form action="/bars" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
 
   <h4>Location: </h4>
@@ -7,18 +9,23 @@
   <div class="checkbox-wrapper">
 
     <div class="checkbox-container">
-      <div><input type="checkbox" id="selections" name="all_bars" value="Bars">
-      <label for="all_bars">Bars</label></div>
 
-      <div><input type="checkbox" id="selections" name="all_lounges" value="Lounges">
-      <label for="all_lounges">Lounges</label></div>
+      <div class="d-block text-center"> <div><div><label for="all_bars" style="margin: 0px;"><i class="fas fa-glass-cheers"></i></label></div><div><label for="all_bars" style="margin: 0px;">Bars</label></div></div>
+      <input type="checkbox" id="all_bars" name="all_bars" value="Bars"></div>
+
+      <div class="d-block text-center"> <div><div><label for="all_lounges" style="margin: 0px;"><i class="fas fa-glass-martini-alt"></i></label></div><div><label for="all_lounges" style="margin: 0px;">Lounges</label></div></div>
+      <input type="checkbox" id="all_lounges" name="all_lounges" value="Lounges"></div>
+
     </div>
 
     <div class="checkbox-container">
-      <div><input type="checkbox" id="selections" name="all_breweries" value="Breweries">
-      <label for="all_breweries">Breweries</label></div>
-      <div><input type="checkbox" id="selections" name="all_nightclubs" value="Nightclubs">
-      <label for="all_nightclubs">Nightclubs</label></div>
+
+      <div class="d-block text-center"> <div><div><label for="all_breweries" style="margin: 0px;"><i class="fas fa-beer"></i></label></div><div><label for="all_breweries" style="margin: 0px;">Breweries</label></div></div>
+      <input type="checkbox" id="all_breweries" name="all_breweries" value="Breweries"></div>
+
+      <div class="d-block text-center"> <div><div><label for="all_nightclubs" style="margin: 0px;"><i class="fas fa-compact-disc"></i></label></div><div><label for="all_nightclubs" style="margin: 0px;">Nightclubs</label></div></div>
+      <input type="checkbox" id="all_nightclubs" name="all_nightclubs" value="Nightclubs"></div>
+
     </div>
   </div>
 
@@ -45,13 +52,13 @@
 
   <div class="slider-container">
     <div class="range-slider">
-      <span id="rs-bullet" class="rs-label">3</span>
+      <span id="rs-bullet" class="rs-label" style="margin-bottom: 15px;margin-left: -4.6vw;left: 60%;">3</span>
       <input id="rs-range-line" class="rs-range" type="range" value="3" min="1" max="5">
 
     </div>
 
     <div class="box-minmax">
-      <span>0</span><span>2000</span>
+      <span>1km</span><span>5km</span>
     </div>
 
   </div> <br>
@@ -60,3 +67,5 @@
     <input type="submit" name="commit" value="Search" data-disable-with="Search Bars" class="form-button mt-3">
   </div>
 </form>
+
+</div>

@@ -6,7 +6,7 @@ rangeSlider.addEventListener("input", showSliderValue, false);
 function showSliderValue() {
   rangeBullet.innerHTML = rangeSlider.value;
   const bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * 578) + "px";
+  rangeBullet.style.left = (bulletPosition * 100) + "%";
 }
 
 export { showSliderValue };
