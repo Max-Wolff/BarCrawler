@@ -1,5 +1,3 @@
-
-
 .create-form {
   display:flex;
   flex-direction:vertical;
@@ -70,6 +68,46 @@
     text-align: center;
     padding: 15px;
   }
+
+  .icons {
+    font-size: 25px;
+    color: $corona-gold;
+  }
+
+  .descriptors {
+    color: $corona-blue;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+
+  .icon-border {
+    border: 2px solid $corona-gold;
+    margin: 0 auto;
+    width: 70%;
+    padding: 7%;
+    background-color: white;
+    border-radius: 30%;
+  }
+
+  .fa-euro-sign {
+    color: $corona-blue;
+  }
+
+  .selected-box {
+    border: 2px solid $corona-gold;
+    margin: 0 auto;
+    width: 70%;
+    padding: 7%;
+    background-color: $corona-blue;
+    border-radius: 30%;
+    .descriptors {
+      color: white;
+      margin: 0px;
+      font-size: 15px;
+      font-weight: lighter;
+    }
+  }
 }
 
 .form-actions {
@@ -80,6 +118,11 @@
 
 .form-actions .btn-home-address{
   width:60vh;
+}
+
+label {
+  display: inherit;
+  margin: 0px;
 }
 
 

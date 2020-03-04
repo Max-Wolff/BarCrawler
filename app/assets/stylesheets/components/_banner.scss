@@ -49,12 +49,56 @@
 }
 
 .container-header {
-  h1 {
-  text-align: center;
-  }
-  a {
-    display: block;
-  }
+  display: flex;
+  // flex-direction:vertical;
+  justify-content:center;
+  // text-align:center;
+  align-items: center;
+
 }
+
+.home-banner  h1 {
+  font-size:3rem;
+  text-align: center;
+  align-self:center;
+  margin-bottom: 0.5em;
+  }
+
+ .home-banner  p {
+  font-size: 27px;
+   width:70vh;
+  }
+
+ .home-banner a {
+     display: block;
+    align-self:center;
+  }
+
+  .home-button {
+    width:70vh;
+    display:flex;
+    justify-content:space-between;
+  }
+
+  .home-button  .btn-home-address {
+     width:30vh;
+    align-self:left;
+    margin-right: 0.5em;
+  }
+
+  .home-button .btn-home-code {
+     width:30vh;
+    align-self:right;
+  }
+
+  .home-banner {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width: 50vw;
+  justify-content:center;
+  text-align:center;
+  }
+
 
 
