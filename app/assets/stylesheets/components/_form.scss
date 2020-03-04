@@ -44,19 +44,32 @@
 
 .radio-container {
   display: flex;
+  justify-content: center;
 }
 
 .checkbox-container {
   display: block;
   width: 50%;
+  margin: 10px;
 }
 
 .checkbox-wrapper {
   display: flex;
 }
 
+.algolia-places {
+  width: 80%;
+  margin: 0 10%;
+}
+
 .form-container {
   background-color: white;
+
+  h4 {
+    margin: 0px auto;
+    text-align: center;
+    padding: 15px;
+  }
 }
 
 .form-actions {
@@ -68,6 +81,8 @@
 .form-actions .btn-home-address{
   width:60vh;
 }
+
+
 
 
 
