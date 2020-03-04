@@ -1,19 +1,45 @@
-.create-form {
-  width: 50vw;
-  margin: 0 auto;
 
-  .header {
+
+.create-form {
+  display:flex;
+  flex-direction:vertical;
+  align-items: center;
+  width: 50vw;
+  justify-content:center;
+  text-align:center;
+   // margin: 0 auto;
+}
+
+ .header {
+    width:60vh;
     margin-bottom: 1em;
+    // background-color:#FCC228;
+    // border: 1px solid ;
+    // border-radius: 25px;
   }
+
+.form-group h2{
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
 }
 
 .form-inputs {
   padding-bottom: .5em;
   margin-bottom: 1em;
+  margin-top: 2em;
+  display:flex;
+  justify-content:center;
+}
+
+.form-inputs h2{
+  text-align: center;
 }
 
 #group_name {
+  width:60vh;
   height: 50px;
+  border-radius: 20px;
 }
 
 .radio-container {
@@ -32,3 +58,16 @@
 .form-container {
   background-color: white;
 }
+
+.form-actions {
+  font-size: 18px;
+  display:flex;
+  justify-content:center;
+}
+
+.form-actions .btn-home-address{
+  width:60vh;
+}
+
+
+
