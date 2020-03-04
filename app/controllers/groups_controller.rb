@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
 
   def shared
     @group = Group.find_by_token(params[:token])
-    @bars = @group.bars
+    @bars = @group.bars.where(selected: true)
   end
 
   def edit
