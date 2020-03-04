@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :bars, only: [:update]
   resources :drinks, only: [:index]
   resources :members, only: [:index, :new, :create]
-  resources :groups, only: [:new, :create, :edit, :update] do
-    resources :stops, only: [:index, :show, :new, :create]
-  end
+  resources :groups, only: [:new, :create, :edit, :update]
+
   get 'group/shared/:token', to: 'groups#shared', as: 'unique_group'
+  get 'group/shared/:token/:rank', to: 'stops#show', as: 'unique_group_stop'
   get 'group/:id', to: 'groups#show', as: 'show_group'
   post 'bars', to: 'bars#index', as: 'bars'
 end
