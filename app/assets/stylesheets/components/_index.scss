@@ -13,6 +13,7 @@
 @import "nav_during_crawl";
 @import "map";
 
+
 //Smallest devices
 @media(min-width: 100px) and (max-width: 576px) {
   .bar-selection {
@@ -37,4 +38,17 @@
   .rating-price-info {
     justify-content:center;
   }
+
+ #group_name {
+  width:40vh;
+  align-self: center;
+ }
+
+
+.form-actions .btn-home-address{
+  width:40vh;
+  // align-self: center;
+  align-self:center;
+}
+
 }
