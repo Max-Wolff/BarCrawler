@@ -3,18 +3,16 @@ require_relative '../services/foursquare_api'
 class BarsController < ApplicationController
 
   def index
-    # foursquare
+    foursquare
     form_params
     if form_params["commit"] == "Search"
       puts "Hello World"
     end
-    hash_one = {name: "Ähm",rating: 2.7, address:"Neukölnstrasse 12, 1232 Berlin", price: 1, picture_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 1:00 AM", open_today: false}
-    hash_two = {name: "Muted Horn",rating: 4.2, address:"Flughafenstr 49, 12053 Berlin", price: 2, picture_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 12:00 PM", open_today: true}
-    bar1 = Bar.create(hash_one)
-    bar2 = Bar.create(hash_two)
-    bars = Bar.first(10)
+
+
     @group = Group.create
-    bars.each do |bar|
+    @bars_array.each do |bar_hash|
+      bar = Bar.create(bar_hash)
       Stop.create(group: @group, bar: bar)
     end
 
