@@ -3,14 +3,28 @@ require_relative '../services/google_maps_directions_api'
 class GroupsController < ApplicationController
 
   def show
+    @group = Group.find(params[:id])
+    @bars = @group.bars
+
+    @markers = @bars.map do |bar|
+      {
+        lat: bar[:latitude],
+        lng: bar[:longitude],
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+      }
+    end
+  end
+
+  def shared
     @group = Group.find_by_token(params[:token])
+    @bars = @group.bars
   end
 
-  def new
-    @group = Group.new
+  def edit
+    @group = Group.find(params[:id])
   end
 
-  def create
+  def update
     @bars = Bar.geocoded.first(5)
     @group = Group.create(token: params[:authenticity_token], name: params[:group][:name])
 
