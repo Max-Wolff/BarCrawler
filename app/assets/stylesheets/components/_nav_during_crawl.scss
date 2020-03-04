@@ -1,0 +1,37 @@
+.navigation-display {
+}
+
+.header-during-crawl {
+  text-align: center;
+  background: $corona-blue;
+  color: white;
+  padding: 10px 10px;
+}
+
+.footer-during-crawl {
+  background: $corona-blue;
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  a {
+    color: white;
+    .fas {
+      font-size: 45px;
+    }
+  }
+}
+
+#spin-the-wheel {
+  border-radius: 50%;
+  background: #C4C4C4;
+  height: 120px;
+  width: 120px;
+  left: 128px;
+  top: 721px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+}
