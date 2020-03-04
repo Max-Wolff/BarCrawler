@@ -1,8 +1,6 @@
 .slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .box-minmax{
   margin-top: 30px;
@@ -77,28 +75,20 @@
     position: relative;
     transform-origin: center center;
     display: block;
-    width: 98px;
-    height: 98px;
+    width: 70px;
+    height: 70px;
     background: transparent;
     border-radius: 50%;
-    line-height: 30px;
     text-align: center;
-    font-weight: bold;
-    padding-top: 22px;
     box-sizing: border-box;
-    border: 2px solid $corona-gold;
-    margin-top: 20px;
-    margin-left: -38px;
-    left: attr(value);
-    color: $corona-blue;
+    border: 2px solid #FCC228;
+    color: #0C223F;
     font-weight: normal;
-    font-size: 25px;
+    display: block;
+    font-size: 20px;
+
     &::after {
-        content: "m";
-        display: block;
-        font-size: 20px;
-        letter-spacing: 0.07em;
-        margin-top: -2px;
+      content: "km";
     }
 
 }
