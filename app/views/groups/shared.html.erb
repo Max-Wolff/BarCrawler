@@ -1,1 +1,20 @@
-<%= render "shared/nav_during_crawl" %>
+<!-- http://localhost:3000/group/shared/bzPX9O61t015WMl5CV1PPc+eNkIFFk0E8SptGYU+ePTJrk%2F9FaiiV24bdgunoMR9OH5gDEhMfDFyhKPkPnp%2FsA== -->
+<div class="route-view">
+
+  <div class="bars-and-map">
+
+    <div class="bars">
+      <div class="header">
+        <h1><%= @group.name %></h1>
+        <h3>Your Bars for the Night:</h3>
+      </div>
+      <% @stops.each do |stop| %>
+        <%= render 'shared/shared-bar-card', stop: stop %>
+      <% end %>
+    </div>
+
+    <div class="map-placeholder" id="map" style="width: 70vw; height: 100vh;" data-markers="<%= @markers.to_json %>" data-route="<%= @route.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  </div>
+
+</div>

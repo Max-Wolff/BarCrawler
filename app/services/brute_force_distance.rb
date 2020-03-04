@@ -1,5 +1,5 @@
 def brute_force(bars, distances)
-  combinations = bars.permutation.to_a
+  combinations = bars.to_a.permutation.to_a
   record_distance = calculate_distance(bars, distances)
   best_combination = bars
 
