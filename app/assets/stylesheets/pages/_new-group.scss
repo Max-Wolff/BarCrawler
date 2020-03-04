@@ -1,4 +1,10 @@
 .wrapper {
-  background: #E5E5E5;
-  height: 200vh;
+ background-image: url("banner-liquor.jpg");
+  // background: #E5E5E5;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content:center;
+  text-align:center;
+  align-items: center;
 }
