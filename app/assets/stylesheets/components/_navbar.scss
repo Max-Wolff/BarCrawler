@@ -30,6 +30,7 @@
 
 .nav-container {
   width: 100vw;
+  height: 5vh;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -39,6 +40,7 @@
 .nav-wrapper {
   display: table-cell;
   width: 100vw;
+  height: 100%;
 }
 
 /* Breadcrups CSS */
@@ -87,6 +89,10 @@
 }
 
 .arrow-steps .step:first-child:before {
+  border: none;
+}
+
+.arrow-steps .step:last-child:after {
   border: none;
 }
 

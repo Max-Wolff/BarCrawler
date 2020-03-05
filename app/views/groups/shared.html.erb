@@ -41,6 +41,8 @@
   </div>
 </div>
 
+<%= link_to ("<i class='far fa-play-circle'></i> Start BarCrawl").html_safe, unique_group_stop_path(@group.token, 1) %>
+
 <script>
   function closePopUp() {
     document.getElementById('popup-bg').classList.remove('show-popup');

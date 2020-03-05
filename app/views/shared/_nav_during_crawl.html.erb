@@ -9,11 +9,12 @@
 <div class="footer-during-crawl">
   <div class="footer-navigation">
     <% unless stop.rank == 1 %>
-      <%= link_to ("<i class='fas fa-arrow-circle-left'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank - 1)) %>
+      <%= link_to ("<i class='fas fa-backward'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank - 1)) %>
     <% end %>
     <%= link_to ("<i class='fas fa-glass-cheers'></i> Selector").html_safe, unique_group_stop_path, id: "spin-the-wheel" %>
     <% unless stop.rank == @last_stop %>
-      <%= link_to ("<i class='fas fa-arrow-circle-right'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank + 1)) %>
+      <%= link_to ("<i class='fas fa-forward'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank + 1)) %>
     <% end %>
   </div>
 </div>
+
