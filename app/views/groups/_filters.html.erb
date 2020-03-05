@@ -2,7 +2,7 @@
 
   <form action="/bars" accept-charset="UTF-8" method="post" class="simple_form search"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
 
-  <h5>Location: </h5>
+  <h5 style="padding-top: 1.0em;">Location: </h5>
   <div class="search-form-control form-group">
     <input class="form-control string required simple_form search" type="text"  name="address" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
   </div>
@@ -10,23 +10,23 @@
   <h5>Categories: </h5>
   <div class="checkbox-wrapper">
 
-    <div class="checkbox-container">
+    <div class="checkbox-container" style="margin-left: 4vw;">
 
 
-      <label for="all_bars"><div class="d-block text-center"> <div class="icon-border selected-box"><div><i class="fas fa-glass-cheers icons"></i></div><div><span class="descriptors">Bars</span></div></div>
-      <input type="checkbox" id="all_bars" name="select_bars" value="4bf58dd8d48988d116941735" style="visibility: hidden"></div></label>
+      <label for="all_bars" style="margin-bottom: 1vw;"><div class="d-flex text-center"> <div class="icon-border selected-box"><div><i class="fas fa-glass-cheers icons"></i></div><div><span class="descriptors">Bars</span></div></div>
+      <input type="checkbox" id="all_bars" name="select_bars" value="4bf58dd8d48988d116941735" style="visibility: hidden" checked></div></label>
 
-      <label for="all_lounges"><div class="d-block text-center"><div class="icon-border"><div><i class="fas fa-glass-martini-alt icons"></i></div><div><span class="descriptors">Lounges</span></div></div>
+      <label for="all_lounges" style="margin-bottom: 1vw;"><div class="d-flex text-center"><div class="icon-border"><div><i class="fas fa-glass-martini-alt icons"></i></div><div><span class="descriptors">Lounges</span></div></div>
       <input type="checkbox" id="all_lounges" name="select_lounges" value="4bf58dd8d48988d121941735" style="visibility: hidden"></div>
 
     </div>
 
     <div class="checkbox-container">
 
-      <label for="all_breweries"><div class="d-block text-center"> <div class="icon-border"><div><i class="fas fa-beer icons"></i></div><div><span class="descriptors">Breweries</span></div></div>
+      <label for="all_breweries" style="margin-bottom: 1vw;"><div class="d-flex text-center"> <div class="icon-border"><div><i class="fas fa-beer icons"></i></div><div><span class="descriptors">Breweries</span></div></div>
       <input type="checkbox" id="all_breweries" name="select_breweries" value="50327c8591d4c4b30a586d5d" style="visibility: hidden"></div></label>
 
-      <label for="all_nightclubs"><div class="d-block text-center"> <div class="icon-border"><div><i class="fas fa-compact-disc icons"></i></div><div><span class="descriptors">Nightclubs</span></div></div>
+      <label for="all_nightclubs" style="margin-bottom: 1vw;"><div class="d-flex text-center"> <div class="icon-border"><div><i class="fas fa-compact-disc icons"></i></div><div><span class="descriptors">Nightclubs</span></div></div>
       <input type="checkbox" id="all_nightclubs" name="select_nightclubs" value="4bf58dd8d48988d11f941735" style="visibility: hidden"></div></label>
 
     </div>
@@ -35,7 +35,7 @@
   <h5>Maximum Price Tier:</h5>
 
   <fieldset>
-    <div class="radio-container" style="margin-top: 10px; margin-bottom: 10px">
+    <div class="radio-container" style="margin-bottom: 10px">
       <div style="margin-right: 10%; display: flex;"><input type="radio" name="price_tier" id="least-expensive" value="1" style="margin-right: 7px;">
         <label for="least-expensive"><i class="fas fa-euro-sign"></i></label>
       </div>
@@ -55,7 +55,6 @@
   </fieldset>
 
   <h5>Radius:</h5>
-  <br>
 
   <div class="slider-container">
     <div class="range-slider">
@@ -70,14 +69,14 @@
 
   </div> <br>
 
-  <div class="d-flex justify-content-center">
-    <input type="submit" name="commit" value="Search" data-disable-with="Search Bars" class="form-button mt-3">
+  <div class="d-flex justify-content-center" style="margin-top: -0.8em;">
+    <input type="submit" name="commit" value="Search" data-disable-with="Search Bars" class="form-button">
   </div>
 </form>
 
 </div>
 
-<i onclick="toggleSidebar()" id="toggle-sidebar" class="fas fa-arrow-left"></i>
+<i onclick="toggleSidebar()" id="toggle-sidebar" class="fas fa-arrow-left" style="margin-top: 13px"></i>
 
 <script>
   function toggleSidebar() {
