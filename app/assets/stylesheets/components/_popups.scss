@@ -1,0 +1,73 @@
+.popped-bar-card {
+  height: 180px;
+  padding: .5em;
+  border-radius: 10px;
+  background: white;
+  position: relative;
+
+  .card-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    margin-bottom: .5em;
+  }
+
+  h4 {
+    margin: 0px;
+    font-size: 21px;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  .rating-price-info {
+    display: flex;
+    justify-content: space-between;
+
+    .card-rating {
+      margin-right: 1em;
+
+      .full-beer {
+        color: $corona-gold;
+      }
+
+      .half-beer {
+        background-image:linear-gradient(0deg, $corona-gold, $gray-text);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+
+      .empty-beer {
+        color: $gray-text;
+      }
+    }
+
+
+    .card-open-until {
+      color: $gray-text;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      color: $gray-text;
+    }
+  }
+
+  .ranking {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 1px $corona-blue dashed;
+    position: absolute;
+    bottom: 3em;
+    right: 1em;
+    text-align: center;
+
+    h2 {
+      margin: 4px 0;
+    }
+  }
+
+}

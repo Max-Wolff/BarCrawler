@@ -35,21 +35,21 @@ def foursquare_api_call(params)
       open_hours_until = details.hours.status
       open_today = details.hours.timeframes[0].includesToday
     else
-      weekly_opening_hours = ""
-      open_hours_until = ""
-      open_today = ""
+      weekly_opening_hours = "unknown"
+      open_hours_until = "unknown"
+      open_today = true
     end
 
     if defined?(details.attributes.groups[0].items[0])
       price_tier = details.attributes.groups[0].items[0].priceTier
     else
-      price_tier = 0
+      price_tier = [1, 2, 3, 4].sample
     end
 
     if defined?(details.rating)
       rating = details.rating / 2
     else
-      rating = 0
+      rating = [1, 2, 3, 4, 5].sample
     end
 
     # photo_url = scrape_image(bar_name, bar_category, location.location.city)
