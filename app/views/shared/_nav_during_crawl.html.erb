@@ -7,6 +7,10 @@
   <%= render 'shared/shared-bar-card', stop: stop %>
 </div>
 
+<div class="spinner">
+  <%= link_to ("<i class='fas fa-spinner'></i> Get a round of drinks").html_safe, unique_group_stop_path %>
+</div>
+
 <div class="footer-during-crawl">
   <div class="footer-navigation">
     <% unless stop.rank == 1 %>
@@ -18,3 +22,4 @@
     <% end %>
   </div>
 </div>
+
