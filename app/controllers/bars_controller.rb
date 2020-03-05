@@ -6,7 +6,11 @@ class BarsController < ApplicationController
   def index
     # <<<< FOURSQUARE >>>>>
     # form_params
+
     # if form_params["commit"] == "Search"
+    #   if form[:address].empty?
+    #     form[:address] = [Bar.last.longitude, Bar.last.latitude]
+    #   end
     #   foursquare_modified_api_call(form_params)
     #   @group = Group.last
     #   @group.stops.delete_all
@@ -26,7 +30,6 @@ class BarsController < ApplicationController
     # <<< WITHOUT FOURSQUARE >>>>
 
     # <<<< FOURSQUARE >>>>>
-
     # if @group.nil? == true
     #   search_params
     #   @group = Group.create
