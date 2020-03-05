@@ -1,1 +1,91 @@
 // Specific CSS for your home-page
+
+.home-wrapper {
+  // background-image: url("banner-liquor.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('banner-liquor.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  text-align:center;
+  // align-items: center;
+}
+
+.home-container {
+  // align-items: center;
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50vh;
+  width: 120vh;
+}
+
+.home-info {
+  display : flex;
+  flex-direction:column;
+  // align-items: center;
+  width: 50vh;
+  flex-wrap: wrap;
+  // justify-content:center;
+  // text-align:center;
+}
+
+.home-info h1,p{
+  color: white;
+  // margin-right:10px;
+
+}
+
+
+.home-text {
+  // margin-left:50px;
+ display:flex;
+  flex-direction:column;
+
+  text-align:left;
+  // margin-bottom: 20px;
+}
+
+.home-text h1{
+  font-size:4rem;
+  text-align: left;
+
+}
+
+.home-text p{
+  margin-top: 10px;
+  font-size:1.5rem;
+
+}
+ .home-buttons {
+    width:60vh;
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+
+  }
+
+  .home-buttons .btn-home-code {
+    margin-bottom: 10px;
+    padding: 16px 60px;
+  }
+  .home-buttons .btn-home-address {
+    padding: 16px 60px;
+  }
+
+
+
+
+
+
+
+.home-image {
+  background-image: url("https://www-origin.horiba.com/fileadmin/_processed_/csm_01_02-2019_Beer_Brewing_53ef2818e5.png");
+  width: 30vh;
+  background-repeat: no-repeat;
+  float:right;
+  padding-left: 10px;
+
+
+}
