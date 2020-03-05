@@ -1,25 +1,36 @@
 .bar-selection {
   display: flex;
   width: 100%;
-  height: 100vh;
-  padding: 1vw;
+  height: 95vh;
+  position: relative;
 
   .sidebar {
     width: 25%;
     height: 100%;
   }
 
-  .map-container {
-    width: 75%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    overflow-x: scroll;
-  }
   #map {
-    width: 75%;
-    height: 40vh;
+    width: 100%;
+    height: 95vh;
     z-index: 0;
     margin-bottom: 10px;
+  }
+
+  .cards-container {
+    display: flex;
+    padding: .5em 2em;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 1em;
+    left: 25vw;
+    width: 75vw;
+    transition-property: left, width;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+
+    &.shift-left {
+      left: 5vw;
+      width: 95vw;
+    }
   }
 }
