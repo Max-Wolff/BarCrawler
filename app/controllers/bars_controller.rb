@@ -5,8 +5,6 @@ class BarsController < ApplicationController
 
   def index
     # <<<< FOURSQUARE >>>>>
-    # foursquare_api_call
-
     # form_params
     # if form_params["commit"] == "Search"
     #   foursquare_modified_api_call(form_params)
@@ -19,15 +17,20 @@ class BarsController < ApplicationController
     # end
     # <<<< FOURSQUARE >>>>>
 
+    # <<< WITHOUT FOURSQUARE >>>>
     bars = Bar.first(10)
     @group = Group.create
     bars.each do |bar|
       Stop.create(group: @group, bar: bar)
     end
+    # <<< WITHOUT FOURSQUARE >>>>
 
     # <<<< FOURSQUARE >>>>>
+
     # if @group.nil? == true
+    #   search_params
     #   @group = Group.create
+    #   foursquare_api_call(search_params)
     #   @bars_array.each do |bar_hash|
     #     bar = Bar.create(bar_hash)
     #     Stop.create(group: @group, bar: bar)
@@ -50,5 +53,9 @@ class BarsController < ApplicationController
 
   def form_params
     params.permit(:address, :price_tier, :radius, :select_bars, :select_nightclubs, :select_lounges, :select_breweries, :commit)
+  end
+
+  def search_params
+    params.permit(:authenticity_token, :search, :button)
   end
 end
