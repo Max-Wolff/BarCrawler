@@ -17,7 +17,14 @@
 @import "popups";
 
 
+
 //Smallest devices
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 @media(min-width: 100px) and (max-width: 576px) {
   .bar-selection {
     width:100%;
