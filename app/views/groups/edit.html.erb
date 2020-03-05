@@ -1,18 +1,20 @@
+<%= render 'shared/navbar' %>
+
 <div class="wrapper">
   <div class="create-form">
 
     <div class="form-group">
     <div class="header">
-    <h2 >Create group</h2>
+    <h2> Group name</h2>
     </div>
     <%= form_with model: @group, local: true do |form| %>
       <div class="form-inputs">
         <div id="group_name">
-        <%= form.text_field :name, placeholder: "Group name"%>
+        <%= form.text_field :name, placeholder: "  Enter an epic group name here..." %>
         </div>
       </div>
       <div class="form-actions">
-        <%= form.submit class: "btn-home-address btn-home-address:hover"%>
+        <%= form.submit "Create group", class: "btn-home-address btn-home-address:hover"%>
       </div>
     <% end %>
     </div>

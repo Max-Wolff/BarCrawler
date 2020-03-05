@@ -2,12 +2,20 @@ require 'nokogiri'
 require 'open-uri'
 
 
-def foursquare_api_call
+def foursquare_api_call(params)
   @bar_hash = {}
   @bars_array = []
   @client = Foursquare2::Client.new(:client_id => ENV['CLIENT_ID_KEY'], :client_secret => ENV['CLIENT_SECRET_KEY'])
 
-  call_foursquare_search_api
+  search_text = search_params[:search]
+  url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{search_text}.json?access_token=#{ENV['MAPBOX_API_KEY']}"
+  encoded_url = URI.encode(url)
+  doc = JSON.parse(open(encoded_url).read)
+  json_hash = doc["features"]
+  coordinates = json_hash[0]["center"].reverse().join(",")
+
+  @locations = @client.search_venues(:ll => coordinates, :radius => '2000', :limit => '3', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
+
 
   @locations.venues.each do |location|
 
@@ -56,10 +64,6 @@ def foursquare_api_call
     @bars_array << @bar_hash
   end
   @bars_array
-end
-
-def call_foursquare_search_api
-  @locations = @client.search_venues(:ll => '52.507405,13.392278', :radius => '2000', :limit => '3', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
 end
 
 

@@ -1,41 +1,100 @@
-.navbar-lewagon {
-  justify-content: space-between;
+#progress-navbar {
   background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-#navbar-landing {
-  background: transparent;
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: .5em 2em .5em 2em;
-  // margin-bottom: 20px;
+  padding: 0;
   transition: background-color 200ms linear;
   z-index: 1;
 
-  #icon-home {
-    font-size: 3em;
-    color: #0C223F;
+  .navbar-step {
+    text-align: center;
+    padding: .5em 0;
+    margin: 0;
+    width: 25%;
+  }
+  .navbar-step.done {
+    background: $corona-blue;
+    color: white;
   }
 }
 
-.scrolled {
-  background-color: #fff !important;
-  transition: background-color 200ms linear;
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
 }
 
-.nav-avatar {
-  height:60px;
+.nav-container {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
 }
 
+.nav-wrapper {
+  display: table-cell;
+  width: 100vw;
+}
 
+/* Breadcrups CSS */
+.arrow-steps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow-steps .step {
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  cursor: default;
+  margin: 0 0;
+  padding: 10px 10px 10px 30px;
+  width: 25%;
+  float: left;
+  position: relative;
+  background-color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.arrow-steps .step:after,
+.arrow-steps .step:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: -17px;
+  width: 0;
+  height: 0;
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 21px solid white;
+  z-index: 2;
+}
+
+.arrow-steps .step:before {
+  right: auto;
+  left: 0;
+  border-left: 17px solid #fff;
+  z-index: 0;
+}
+
+.arrow-steps .step:first-child:before {
+  border: none;
+}
+
+.arrow-steps .step.current {
+  color: #fff;
+  background-color: $corona-blue;
+}
+
+.arrow-steps .step.current:after {
+  border-left: 17px solid $corona-blue;
+}
