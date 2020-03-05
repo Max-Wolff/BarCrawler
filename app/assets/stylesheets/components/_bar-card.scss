@@ -1,12 +1,25 @@
+a:hover {
+  text-decoration: none;
+}
+
 .bar-card {
-  min-width: 400px;
-  min-height: 300px;
-  height: 300px;
+  position: relative;
+  min-width: 325px;
+  min-height: 245px;
+  height: 245px;
   margin-right: 1em;
-  padding: 1em;
+  padding: .5em;
   border-radius: 10px;
   box-shadow: 3px 3px 7px $gray-shadow;
   background: white;
+  color: $corona-blue;
+  transition-property: color, border;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+
+  &:hover {
+    color: $corona-gold;
+  }
 
   .card-img {
     border-radius: 10px;
@@ -16,9 +29,14 @@
     margin-bottom: .5em;
   }
 
+  p {
+    margin: 0;
+  }
+
   .rating-price-info {
     display: flex;
     justify-content: space-between;
+    margin: 0;
 
     .card-rating {
       margin-right: 1em;
@@ -48,10 +66,23 @@
       color: $gray-text;
     }
   }
+  .select-icon {
+    position: absolute;
+    top: 0;
+    left: 85px;
+    font-size: 9em;
+    color: $corona-gold;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
 
 }
 
 .bar-card.selected {
   border: 2px solid $corona-gold;
   box-shadow: 2px 2px 4px $gray-shadow;
+
+  .select-icon {
+    opacity: 1;
+  }
 }
