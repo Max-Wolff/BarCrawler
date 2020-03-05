@@ -167,6 +167,7 @@
 }
 
 #share-button {
+  cursor: pointer;
   color: white;
   background: $corona-blue;
   padding: .5em .6em;
@@ -175,4 +176,8 @@
   position: absolute;
   bottom: 1em;
   right: 1em;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
