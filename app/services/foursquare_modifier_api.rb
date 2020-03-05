@@ -10,8 +10,10 @@ def foursquare_modified_api_call(params)
 
   # Should work without this
   # @client = Foursquare2::Client.new(:client_id => ENV['CLIENT_ID_KEY'], :client_secret => ENV['CLIENT_SECRET_KEY'])
-
   search_text = form_params[:address]
+  if search_text.empty? == true
+    search_text = Bar.last.address
+  end
   url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{search_text}.json?access_token=#{ENV['MAPBOX_API_KEY']}"
   url.gsub!(/\P{ASCII}/, 'ss')
   encoded_url = URI.encode(url)
@@ -52,7 +54,7 @@ def foursquare_modified_api_call(params)
 
       # Pulling basic bar information out of foursquare search API
       bar_name = location.name
-      bar_address = "#{location.location.address}, #{location.location.postalCode} #{location.location.city}, #{location.location.cc}"
+      bar_address = "#{location.location.address}, #{location.location.postalCode} #{location.location.city}"
       bar_lat = location.location.lat
       bar_lng = location.location.lng
       bar_category = location.categories[0].name

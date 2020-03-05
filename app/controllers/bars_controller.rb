@@ -8,9 +8,6 @@ class BarsController < ApplicationController
     # form_params
 
     # if form_params["commit"] == "Search"
-    #   if form[:address].empty?
-    #     form[:address] = [Bar.last.longitude, Bar.last.latitude]
-    #   end
     #   foursquare_modified_api_call(form_params)
     #   @group = Group.last
     #   @group.stops.delete_all

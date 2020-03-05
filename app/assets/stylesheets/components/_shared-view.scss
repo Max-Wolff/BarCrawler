@@ -1,5 +1,5 @@
 .route-view {
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
 
   .bars-and-map {
@@ -180,4 +180,8 @@
   &:hover {
     opacity: 0.9;
   }
+}
+
+.start-link {
+  float: right;
 }
