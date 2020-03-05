@@ -6,6 +6,11 @@
   background: $corona-blue;
   color: white;
   padding: 10px 10px;
+  h2 {
+    color: $corona-gold;
+    font-weight: bolder;
+    font-size: 30px;
+  }
 }
 
 .footer-during-crawl {
@@ -21,6 +26,10 @@
     .fas {
       font-size: 45px;
     }
+  }
+  h2 {
+    color: white;
+    font-weight: bolder;
   }
 }
 
