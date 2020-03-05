@@ -1,6 +1,22 @@
-<div id="navbar-landing" >
-  <a id="icon-home"   href="">
-    <%= image_tag "icon-favicon.png" ,class: "nav-avatar" %>
-  </a>
+<div class="nav-container">
+  <div class="nav-wrapper">
+    <div class="arrow-steps clearfix">
+      <% if request.original_fullpath[7..12] == 'shared' %>
+        <div class="step"> <span>Select your Bars</span> </div>
+        <div class="step"> <span>Choose a Group Name</span> </div>
+        <div class="step current"> <span>Share with your Friends</span> </div>
+        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+      <% elsif request.original_fullpath[-4..-1] == 'edit' %>
+        <div class="step current"> <span>Select your Bars</span> </div>
+        <div class="step current"> <span>Choose a Group Name</span> </div>
+        <div class="step"> <span>Share with your Friends</span> </div>
+        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+      <% else %>
+        <div class="step current"> <span>Select your Bars</span> </div>
+        <div class="step"> <span>Choose a Group Name</span> </div>
+        <div class="step"> <span>Share with your Friends</span> </div>
+        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-

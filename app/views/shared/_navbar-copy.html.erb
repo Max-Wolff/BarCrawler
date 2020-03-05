@@ -1,0 +1,18 @@
+<div id="progress-navbar" >
+  <% if request.original_fullpath[7..12] == 'shared' %>
+    <div class="navbar-step done">Select your Bars</div>
+    <div class="navbar-step done">Choose a Group Name</div>
+    <div class="navbar-step done">Share with your Friends</div>
+    <div class="navbar-step">Enjoy the BarCrawl</div>
+  <% elsif request.original_fullpath[-4..-1] == 'edit' %>
+    <div class="navbar-step done">Select your Bars</div>
+    <div class="navbar-step done">Choose a Group Name</div>
+    <div class="navbar-step">Share with your Friends</div>
+    <div class="navbar-step">Enjoy the BarCrawl</div>
+  <% else %>
+    <div class="navbar-step done">Select your Bars</div>
+    <div class="navbar-step">Choose a Group Name</div>
+    <div class="navbar-step">Share with your Friends</div>
+    <div class="navbar-step">Enjoy the BarCrawl</div>
+  <% end %>
+</div>
