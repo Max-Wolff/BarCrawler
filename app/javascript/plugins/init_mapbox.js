@@ -22,33 +22,6 @@ const initMapbox = () => {
 
     map.addControl(new mapboxgl.FullscreenControl());
 
-    map.on('load', function() {
-      map.addSource('route', {
-        'type': 'geojson',
-        'data': {
-          'type': 'Feature',
-          'properties': {},
-          'geometry': {
-            'type': 'LineString',
-            'coordinates': JSON.parse(mapElement.dataset.route)
-          }
-        }
-      });
-      map.addLayer({
-        'id': 'route',
-        'type': 'line',
-        'source': 'route',
-        'layout': {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        'paint': {
-          'line-color': '#FCC228',
-          'line-width': 8
-        }
-      });
-    });
-
     const markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
@@ -60,6 +33,35 @@ const initMapbox = () => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
+
+    if (mapElement.dataset.route) {
+      map.on('load', function() {
+        map.addSource('route', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'properties': {},
+            'geometry': {
+              'type': 'LineString',
+              'coordinates': JSON.parse(mapElement.dataset.route)
+            }
+          }
+        });
+        map.addLayer({
+          'id': 'route',
+          'type': 'line',
+          'source': 'route',
+          'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          'paint': {
+            'line-color': '#FCC228',
+            'line-width': 8
+          }
+        });
+      });
+    }
   }
 };
 

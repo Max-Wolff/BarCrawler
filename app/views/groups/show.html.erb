@@ -6,6 +6,14 @@
     <h3>Please select up to 7 Bars:</h3>
     <h2 id="selection">0 / 7</h2>
   </div>
+<<<<<<< HEAD
+  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="cards-container">
+    <% @group.bars.each do |bar| %>
+      <%= link_to (render 'shared/bar-card', bar: bar), bar, method: :patch, remote: true %>
+    <% end %>
+  </div>
+=======
   <div>
     <div class="map-placeholder" id="map" style="width: 75vw; height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
@@ -17,6 +25,7 @@
     <% end %>
     </div>
     </div>
+>>>>>>> master
 </div>
 
 <%= link_to 'Create BarCrawl', edit_group_path(@group) %>
