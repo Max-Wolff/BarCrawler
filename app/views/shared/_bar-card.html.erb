@@ -22,7 +22,7 @@
       <% end %>
     <% end %>
     </p>
-    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until][5..].capitalize %></p>
+    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until][5..] %></p>
     <p class="card-price">
       <% if bar[:price].nil? == false %>
         <% bar[:price].to_i.times do %>
