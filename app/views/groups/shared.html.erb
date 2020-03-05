@@ -19,7 +19,7 @@
 
 </div>
 
-<div onclick="openPopUp()" id="share-button"><i class="fas fa-share-square"></i></div>
+<div id="share-button"><i class="fas fa-share-square"></i></div>
 
 <div id="popup-bg" style="width: 100vw; height: 100vh; justify-content: center; align-items: center; padding: 2em; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0; z-index: 2;">
   <div class="share-popup">
@@ -44,9 +44,17 @@
     document.getElementById('popup-bg').classList.remove('show-popup');
   }
 
-  function openPopUp() {
-    document.getElementById('popup-bg').classList.add('show-popup');
-  }
+  document.getElementById('share-button').addEventListener('click', event => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'BarCrawler - <%= @group.name %>',
+        url: 'https://barcrawlers.herokuapp.com/group/shared/<%= @group.token %>'
+      })
+      .catch(console.error);
+    } else {
+      document.getElementById('popup-bg').classList.add('show-popup');
+    }
+  });
 
   function copyLink() {
     /* Get the text field */
