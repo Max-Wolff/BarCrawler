@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'google_maps_service'
 # Gem for geocoding
 gem 'geocoder'
+# To generate QR codes
+gem 'rqrcode'
+gem 'barby'
 
 # handling the authentication for the foursquare2 API
 gem 'oauth2'

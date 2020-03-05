@@ -1,3 +1,9 @@
+require 'rqrcode'
+require 'barby'
+require 'barby/barcode'
+require 'barby/barcode/qr_code'
+require 'barby/outputter/png_outputter'
+
 require_relative '../services/google_maps_directions_api'
 require_relative '../services/mapbox_directions_api'
 
@@ -29,6 +35,10 @@ class GroupsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
       }
     end
+
+    barcode = Barby::QrCode.new("https://barcrawlers.herokuapp.com/group/shared/#{@group.token}", level: :q, size: 10)
+    base64_output = Base64.encode64(barcode.to_png({ xdim: 5 }))
+    @qr_code = "data:image/png;base64,#{base64_output}"
   end
 
   def edit
