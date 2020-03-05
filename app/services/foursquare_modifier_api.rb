@@ -5,19 +5,20 @@ require 'open-uri'
 def foursquare_modified_api_call(params)
   @bar_hash = {}
   @filtered_bars = []
+  @client = Foursquare2::Client.new(:client_id => ENV['CLIENT_ID_KEY'], :client_secret => ENV['CLIENT_SECRET_KEY'])
+
 
   # Should work without this
   # @client = Foursquare2::Client.new(:client_id => ENV['CLIENT_ID_KEY'], :client_secret => ENV['CLIENT_SECRET_KEY'])
 
   search_text = form_params[:address]
   url = "https://api.mapbox.com/geocoding/v5/mapbox.places/#{search_text}.json?access_token=#{ENV['MAPBOX_API_KEY']}"
-  url.gsub!(/\P{ASCII}/, 's')
+  url.gsub!(/\P{ASCII}/, 'ss')
   encoded_url = URI.encode(url)
   doc = JSON.parse(open(encoded_url).read)
   json_hash = doc["features"]
   coordinates = json_hash[0]["center"].reverse().join(",")
 
-  form_address = form_params[:address]
   form_price = form_params[:price_tier]
   form_radius = form_params[:radius].to_i * 1000
 
