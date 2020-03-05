@@ -14,23 +14,19 @@
       <h1 class="">BarCrawler</h1>
       <p class="">Find the perfect route for an epic night out</p>
       </div>
+      <div class="search-bar-homepage">
+        <%= render 'search' %>
+      </div>
       <div class="home-buttons">
-
-      <div class="home-button">
-      <a href="bars" data-method="post" class="btn-home-address"><i class="fas fa-map-marker"></i> Create Crawl</a>
       <a href="group_stop" class="btn-home-code"><i class="fas fa-qrcode"></i> Enter Code</a>
       </div>
 
     </div>
     <div class="home-image">
 
-
-       <div class="search-bar-homepage">
-        <%= render 'search' %>
-      </div>
-
     </div>
   </div>
+</div>
 </div>
 
 <%= render "shared/footer" %>

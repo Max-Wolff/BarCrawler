@@ -23,7 +23,9 @@
 
 
 .search-bar-homepage {
-  width: 33vw;
+  // width: 33vw;
+  width: 37vw;
+
   .algolia-places {
     margin: 0;
     width: 100%;
@@ -31,5 +33,6 @@
   .search-form-control .btn {
     color: white;
     background-color: $corona-blue;
+
   }
 }
