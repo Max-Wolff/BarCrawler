@@ -5,6 +5,7 @@ def brute_force(bars, distances)
 
   combinations.each do |comb|
     dist = calculate_distance(comb, distances)
+    puts "combination: #{comb}, distance: #{dist}"
     if dist < record_distance
       record_distance = dist
       best_combination = comb
@@ -30,7 +31,7 @@ end
 
 # Testing
 
-# 7.times do |i|
+# 1.times do |i|
 #   puts "Brute force for #{i + 4} bars"
 #   bars = []
 #   (i + 4).times do |ind|
@@ -40,7 +41,7 @@ end
 #   bars[0...-1].each_with_index do |bar, ind|
 #     temp = {}
 #     bars[(ind + 1)..].each do |other|
-#       temp[other] = (rand(100) + 50)
+#       temp[other] = (rand(400) + 100)
 #     end
 #     distances[bar] = temp
 #   end
@@ -48,9 +49,13 @@ end
 #   combs = bars.permutation.to_a.length
 #   puts "#{combs} possible Combinations..."
 #   start = Time.now()
-#   puts brute_force(bars, distances)
+#   res = brute_force(bars, distances)
+#   puts res
 #   time = Time.now - start
 #   puts "Took #{time} seconds"
 #   puts "#{combs/time} combinations per second"
 #   puts ""
+#   res[:comb][0...-1].each_with_index do |bar, ind|
+#     puts "#{bar} - #{res[:comb][ind + 1]}: #{calculate_distance([bar, res[:comb][ind + 1]], distances)}"
+#   end
 # end
