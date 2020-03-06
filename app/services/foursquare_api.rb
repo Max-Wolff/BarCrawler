@@ -21,7 +21,7 @@ def foursquare_api_call(params)
 
     # Pulling basic bar information out of foursquare search API
     bar_name = location.name
-    bar_address = "#{location.location.address}, #{location.location.postalCode} #{location.location.city}, #{location.location.cc}"
+    bar_address = "#{location.location.address}, #{location.location.postalCode} #{location.location.city}"
     bar_lat = location.location.lat
     bar_lng = location.location.lng
     bar_category = location.categories[0].name

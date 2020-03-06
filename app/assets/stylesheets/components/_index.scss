@@ -79,29 +79,38 @@
   margin-bottom: 1em;
  }
 
- .home-image {
-  display: none;
- }
 
-.home-wrapper {
-  width:100vh;
- }
+
  .home-container {
   flex-direction:column;
    align-items: center;
-   width: 100%;
+  width: 70vh;
   justify-content: center;
  }
  .home-info {
   display : flex;
+  width: 100vw;
   flex-direction:column;
    align-items: center;
-
  }
+
+ .home-text h1{
+  text-align:center;
+ }
+
+
+
+ .home-text p{
+  text-align:center;
+ }
+
+
+
 
  .home-buttons {
    flex-direction:column;
    align-items: center;
+   justify-content:center;
  }
  .home-buttons .btn-home-code {
     align-self:center;
@@ -110,13 +119,14 @@
 
   .search-bar-homepage {
   // width: 33vw;
-  width: 105vw;
+  width: 100vw;
   // margin-right: 50px;
 }
 
 .footer {
-  width:60vh;
+  width:50vh;
 }
+
 
 
 
