@@ -38,7 +38,7 @@ def foursquare_modified_api_call(params)
 
   final_ids.delete("")
 
-  limit_of_items = 4 / final_ids.count
+  limit_of_items = 20 / final_ids.count
 
   @all_locations = []
 
@@ -68,8 +68,8 @@ def foursquare_modified_api_call(params)
         open_hours_until = details.hours.status
         open_today = details.hours.timeframes[0].includesToday
       else
-        weekly_opening_hours = "unknown"
-        open_hours_until = "unknown"
+        weekly_opening_hours = "Mo-So"
+        open_hours_until = "Open Until 3am"
         open_today = true
       end
 
