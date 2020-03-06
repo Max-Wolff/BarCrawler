@@ -32,10 +32,10 @@
 
     <div class="share-options">
       <div class="copy-link">
-        <input type="text" value="https://barcrawlers.herokuapp.com/group/shared/<%= @group.token %>" id="group-link">
+        <input type="text" value="https://barcrawler.club/group/shared/<%= @group.token %>" id="group-link">
         <button onclick="copyLink()" id="copy-button"><i class="far fa-copy"></i> Copy</button>
       </div>
-      <h4><a class="form-button" href="mailto:?subject=Let's%20go%20on%20a%20BarCrawl%20tonight%21&amp;body=You%20can%20join%20my%20group%20<%= @group.name %>%20by%20clicking%20here%3A%0D%0A%0D%0Ahttps%3A%2F%2Fbarcrawlers.herokuapp.com%2Fgroup%2Fshared%2F<%= @group.token %>"><i class="far fa-envelope"></i> Email</a></h4>
+      <h4><a class="form-button" href="mailto:?subject=Let's%20go%20on%20a%20BarCrawl%20tonight%21&amp;body=You%20can%20join%20my%20group%20<%= @group.name %>%20by%20clicking%20here%3A%0D%0A%0D%0Ahttps%3A%2F%2Fbarcrawler.club%2Fgroup%2Fshared%2F<%= @group.token %>"><i class="far fa-envelope"></i> Email</a></h4>
       <img src="<%= @qr_code %>" alt="">
     </div>
   </div>
