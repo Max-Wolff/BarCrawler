@@ -9,6 +9,7 @@
 Stop.destroy_all
 Bar.destroy_all
 Group.destroy_all
+Drink.destroy_all
 
 bar_1 = Bar.create(name: "Ä",rating: 4, address:"Neukölnstrasse 12, 1232 Berlin", price:3, photo_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 1:00 AM", open_today: false, latitude: 52.507859, longitude: 13.391951)
 bar_3 = Bar.create(name: "Muted Horn",rating: 4.2, address:"Flughafenstr 49, 12053 Berlin", price:2, photo_url:"https://www.jaz-hotel.com/cache/images/wolframslider3_008a741a8a741a5d7a33e2-1-1.jpg", category:"Bar", open_until: "Open until 12:00 PM", open_today: true, latitude: 52.5079, longitude: 13.139951)
@@ -23,4 +24,10 @@ bar_10 = Bar.create(name: "Schwelgerei",rating: 5, address:"Flughafenstr. 49, 12
 group_1 = Group.create(name:"Guys just want to have fun",token:"")
 group_4 = Group.create(name:"The champions",token:"")
 
+Drink.create(name: 'Beer', picture_url: 'https://kattus.at/wp-content/uploads/corona-extra.jpg')
+Drink.create(name: 'Tequila', picture_url: 'https://image.freepik.com/free-photo/gold-tequila-shot-with-lime-isolated-white_80510-533.jpg')
+Drink.create(name: 'Berliner Luft', picture_url: 'https://aniland-shop.de/media/image/02/1c/4e/Produkte_Berliner_Luft_SuperStrong_070-l_600x600.jpg')
+Drink.create(name: 'Jägermeister', picture_url: 'https://media-verticommnetwork1.netdna-ssl.com/wines/jagermeister-100ml-1505747-s515.jpg')
+Drink.create(name: 'Vodka', picture_url: 'https://cdn.heinemann-shop.com/images/h29/h72/9338414989342.jpg')
+Drink.create(name: 'Pina Colada', picture_url: 'https://cdn.webshopapp.com/shops/72785/files/147355199/flavor-west-pina-colada.jpg')
 
