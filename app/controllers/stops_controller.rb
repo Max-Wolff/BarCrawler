@@ -24,4 +24,18 @@ class StopsController < ApplicationController
 
     @route = directions([prev_stop, @stop.bar])
   end
+
+  def wheel
+    @group = Group.find_by_token(params[:token])
+    @stop = @group.stops.find_by_rank(params[:rank])
+
+    @drinks = []
+    drinks_object = []
+    Drink.all.each do |drink|
+      @drinks << drink.picture_url
+      drinks_object << drink
+    end
+    @end = 170
+    @selected_drink = drinks_object[@end/(360/drinks_object.length)]
+  end
 end
