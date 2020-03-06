@@ -4,19 +4,21 @@
   // background-image: url("banner-liquor.jpg");
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('banner-liquor.jpg');
   background-size: cover;
-  // width:100%;
-  height: 100vh;
+  width:100%;
+  height:120vh;
   object-fit: cover;
   display: flex;
   align-items: center;
   justify-content:center;
+
+
   text-align:center;
   z-index: 0;
   // align-items: center;
 }
 
 .home-container {
-  // align-items: center;
+  align-items: center;
   display : flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,7 +78,7 @@
  .home-buttons {
     width:60vh;
     display:flex;
-    // justify-content:center;
+   // justify-content:center;
     margin-top:10px;
 
   }
