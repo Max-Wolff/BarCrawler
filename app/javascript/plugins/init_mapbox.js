@@ -10,7 +10,7 @@ const initMapbox = () => {
       top: 50,
       bottom: 170,
       right: 130,
-      left: 30
+      left: 70
     }, maxZoom: 15, duration: 0 });
   };
 
