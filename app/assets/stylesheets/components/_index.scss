@@ -80,7 +80,9 @@
  }
 
 
-
+.home-wrapper {
+  width:100%;
+}
  .home-container {
   flex-direction:column;
    align-items: center;
@@ -95,13 +97,15 @@
  }
 
  .home-text h1{
-  text-align:center;
+  align-self:center;
  }
 
 
 
  .home-text p{
-  text-align:center;
+  width:80%;
+  align-self:center;
+  text-align: center;
  }
 
 
@@ -118,13 +122,12 @@
   }
 
   .search-bar-homepage {
-  // width: 33vw;
-  width: 100vw;
-  // margin-right: 50px;
+  width: 90%;
 }
 
 .footer {
-  width:50vh;
+  height:10vh;
+  width:100vw;
 }
 
 
