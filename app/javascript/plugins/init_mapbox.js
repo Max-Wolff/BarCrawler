@@ -6,7 +6,12 @@ const initMapbox = () => {
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    map.fitBounds(bounds, { padding: {
+      top: 50,
+      bottom: 170,
+      right: 130,
+      left: 70
+    }, maxZoom: 15, duration: 0 });
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -15,6 +20,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/max-wolff/ck7esdnfx1yi41ipoz7de5sg6'
     });
+
 
     map.addControl(new mapboxgl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true }));
 
