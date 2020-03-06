@@ -46,8 +46,12 @@ class GroupsController < ApplicationController
   end
 
   def update
+    token = ''
+    25.times do
+      token += ('a'..'z').to_a.sample
+    end
     @bars = Group.find(params[:id]).bars.geocoded.where(selected: true)
-    @group = Group.new(token: params[:authenticity_token], name: params[:group][:name])
+    @group = Group.new(token: token, name: params[:group][:name])
 
     scraper = GoogleMapsScraper.new(@bars)
     order = scraper.bar_order[:comb]
@@ -60,6 +64,6 @@ class GroupsController < ApplicationController
     end
 
     @group.save
-    redirect_to unique_group_path(params[:authenticity_token])
+    redirect_to unique_group_path(token)
   end
 end
