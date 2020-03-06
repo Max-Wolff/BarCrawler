@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
       }
     end
 
-    barcode = Barby::QrCode.new("https://barcrawler.club/group/shared/#{@group.token}/1", level: :q, size: 10)
+    barcode = Barby::QrCode.new("http://barcrawler.club/group/shared/#{@group.token}/1", level: :q, size: 10)
     base64_output = Base64.encode64(barcode.to_png({ xdim: 5 }))
     @qr_code = "data:image/png;base64,#{base64_output}"
   end
