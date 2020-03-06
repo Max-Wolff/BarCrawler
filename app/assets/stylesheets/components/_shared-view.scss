@@ -16,10 +16,11 @@
       .header {
         text-align: center;
         position: sticky;
-        top: 0;
+        top: 6px;
         background: white;
         margin: 0;
         z-index: 1;
+        margin-top: 6px;
       }
     }
 
@@ -170,12 +171,12 @@
   cursor: pointer;
   color: white;
   background: $corona-blue;
-  padding: .5em .6em;
+  padding: .2em .4em;
   font-size: 2em;
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   bottom: 1em;
-  right: 1em;
+  right: 7em;
 
   &:hover {
     opacity: 0.9;
@@ -184,4 +185,7 @@
 
 .start-link {
   float: right;
+  position: fixed;
+  bottom: 3em;
+  right: 1em;
 }

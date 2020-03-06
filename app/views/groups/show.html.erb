@@ -1,3 +1,4 @@
+<div class="stop-scrolling">
 <%= render 'shared/navbar' %>
 
 <div class="bar-selection">
@@ -11,10 +12,12 @@
     <% end %>
   </div>
 </div>
+
+
 <div class="adjust-position">
 <%= link_to 'Create BarCrawl', edit_group_path(@group), :class=>"form-button" %>
-</div>
-
 <div class="adjust-selectors d-flex">
 <h5 style="margin-right: 10px">Selected Bars:</h5><h5 id="selection">0 / 7</h5>
+</div>
+</div>
 </div>
