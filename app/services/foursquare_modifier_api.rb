@@ -19,7 +19,7 @@ def foursquare_modified_api_call(params)
   coordinates = json_hash[0]["center"].reverse().join(",")
 
   form_price = form_params[:price_tier]
-  form_radius = form_params[:radius].to_i * 1000
+  form_radius = form_params[:radius].to_i * 500
 
   final_ids = []
 
