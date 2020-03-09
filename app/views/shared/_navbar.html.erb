@@ -2,20 +2,20 @@
   <div class="nav-wrapper">
     <div class="arrow-steps clearfix">
       <% if request.original_fullpath[7..12] == 'shared' %>
-        <div class="step current"> <span>Select your Bars</span> </div>
-        <div class="step current"> <span>Choose a Group Name</span> </div>
-        <div class="step current"> <span>Share with your Friends</span> </div>
-        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+        <div class="step current"> <span>1. Select your Bars</span> <i style="color:white;" class="fas fa-list-ol"></i></div>
+        <div class="step current"> <span>2. Choose a Group Name</span> <i style="color:white;" class="fas fa-user-friends"></i></div>
+        <div class="step current"> <span>3. Share with your Friends</span> <i style="color:white;" class="fas fa-share-square"></i></div>
+        <div class="step"> <span>4. Enjoy the BarCrawl</span> <i style="color:#0C223F;" class="fas fa-cocktail"></i></div>
       <% elsif request.original_fullpath[-4..-1] == 'edit' %>
-        <div class="step current"> <span>Select your Bars</span> </div>
-        <div class="step current"> <span>Choose a Group Name</span> </div>
-        <div class="step"> <span>Share with your Friends</span> </div>
-        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+        <div class="step current"> <span>1. Select your Bars</span> <i style="color:white;" class="fas fa-list-ol"></i></div>
+        <div class="step current"> <span>2. Choose a Group Name</span> <i style="color:white;" class="fas fa-user-friends"></i></div>
+        <div class="step"> <span>3. Share with your Friends</span> <i style="color:#0C223F;" class="fas fa-share-square"></i></div>
+        <div class="step"> <span>4. Enjoy the BarCrawl</span> <i style="color:#0C223F;" class="fas fa-cocktail"></i></div>
       <% else %>
-        <div class="step current"> <span>Select your Bars</span> </div>
-        <div class="step"> <span>Choose a Group Name</span> </div>
-        <div class="step"> <span>Share with your Friends</span> </div>
-        <div class="step"> <span>Enjoy the BarCrawl</span> </div>
+        <div class="step current"> <span>1. Select your Bars</span> <i style="color:white;" class="fas fa-list-ol"></i></div>
+        <div class="step"> <span>2. Choose a Group Name</span> <i style="color:#0C223F;" class="fas fa-user-friends"></i></div>
+        <div class="step"> <span>3. Share with your Friends</span> <i style="color:#0C223F;" class="fas fa-share-square"></i></div>
+        <div class="step"> <span>4. Enjoy the BarCrawl</span> <i style="color:#0C223F;" class="fas fa-cocktail"></i></div>
       <% end %>
     </div>
   </div>
