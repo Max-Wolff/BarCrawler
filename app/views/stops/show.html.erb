@@ -1,5 +1,1 @@
-<% if mobile_device == "mobile" %>
-  <%= render "shared/nav_during_crawl", group: @group, stop: @stop, route: @route, markers: @markers %>
-<% else %>
-  <%= render "shared/nav_during_crawl_desktop", group: @group, stop: @stop, route: @route, markers: @markers %>
-<% end %>
+<%= render "shared/nav_during_crawl", group: @group, stop: @stop, route: @route, markers: @markers %>
