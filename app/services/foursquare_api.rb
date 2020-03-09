@@ -14,7 +14,7 @@ def foursquare_api_call(params)
   json_hash = doc["features"]
   coordinates = json_hash[0]["center"].reverse().join(",")
 
-  @locations = @client.search_venues(:ll => coordinates, :radius => '2000', :limit => '3', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
+  @locations = @client.search_venues(:ll => coordinates, :radius => '2000', :limit => '20', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
 
 
   @locations.venues.each do |location|
@@ -35,8 +35,8 @@ def foursquare_api_call(params)
       open_hours_until = details.hours.status
       open_today = details.hours.timeframes[0].includesToday
     else
-      weekly_opening_hours = "unknown"
-      open_hours_until = "unknown"
+      weekly_opening_hours = "Mo-So"
+      open_hours_until = "Open Until 3am"
       open_today = true
     end
 
