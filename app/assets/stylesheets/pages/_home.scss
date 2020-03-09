@@ -1,40 +1,31 @@
 // Specific CSS for your home-page
 
 .home-wrapper {
-  // background-image: url("banner-liquor.jpg");
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), asset-url('banner-liquor.jpg');
-  background-size: cover;
-  width:100vw;
+  position: relative;
   height:100vh;
-  object-fit: cover;
   display: flex;
   align-items: center;
   justify-content:center;
   text-align:center;
   background: linear-gradient(255deg, rgba(30,30,30,0.6) 30%, rgba(46,46,46,0.5) 80%);
   overflow: hidden;
-  // align-items: center;
+  align-items: center;
 }
 
+
+
 .home-container {
-  display: block;
   align-items: center;
   display : flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50%;
-  width: 70%;
+  height: 50vw;
+  width: 70vw;
 }
 
 .home-info {
   display : flex;
   flex-direction: column;
-  // align-items: center;
   margin-bottom: 15vh;
-  width: 50%;
-  flex-wrap: wrap;
-  // justify-content:center;
-  // text-align:center;
+  width: 50vw;
 }
 
 .home-info h1 {
@@ -54,7 +45,7 @@
   font-size: 30px;
   font-weight: lighter;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  text-shadow: 2px 2px 3px #333;
 }
 
 
@@ -91,12 +82,25 @@
     padding: 16px 60px;
   }
   .home-buttons .btn-home-address {
+    z-index:1;
     padding: 16px 60px;
   }
 
-.home-picture {
-  background-size: cover;
-  width:100vw;
-  height:100vh;
-  z-index: 0;
+.home-search {
+  z-index:1;
+  height: 3.5rem;
+  background-color:white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  outline: none !important;
 }
+
+.home-search .btn {
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  color: white;
+  background-color: $corona-blue;
+}
+
+
