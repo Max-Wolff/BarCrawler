@@ -3,7 +3,7 @@
 </div>
 
 <div class="navigation-display">
-  <div class="map-placeholder" id="map" style="width: 100vw; height: 40vh;" data-markers="<%= markers.to_json %>" data-route="<%= route.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="map-placeholder" id="secondmap" style="width: 100vw; height: 40vh;" data-markers="<%= markers.to_json %>" data-route="<%= route.to_json %>" data-mapbox-api-key="<%= ENV['SECOND_MAP_API_KEY'] %>"></div>
   <%= render 'shared/shared-bar-card', stop: stop %>
 </div>
 
