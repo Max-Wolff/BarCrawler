@@ -7,6 +7,7 @@ a:hover {
   min-width: 325px;
   min-height: 245px;
   height: 245px;
+  border: 1px solid #ccc;
   margin-right: 1em;
   padding: .5em;
   border-radius: 10px;
@@ -18,7 +19,7 @@ a:hover {
   transition-timing-function: ease;
 
   &:hover {
-    color: $corona-gold;
+    border: 2px solid $corona-gold;
   }
 
   .card-img {
@@ -27,6 +28,7 @@ a:hover {
     height: 60%;
     background-size: cover;
     margin-bottom: .5em;
+    border: 1px solid $corona-gold;
   }
 
   p {
@@ -79,7 +81,6 @@ a:hover {
 }
 
 .bar-card.selected {
-  border: 2px solid $corona-gold;
   box-shadow: 2px 2px 4px $gray-shadow;
 
   .select-icon {

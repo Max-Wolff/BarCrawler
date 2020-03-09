@@ -42,6 +42,7 @@
     height: 60%;
     background-size: cover;
     margin-bottom: .5em;
+    border: 1px solid $corona-gold;
   }
 
   .rating-price-info {
@@ -81,15 +82,13 @@
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    border: 1px $corona-blue dashed;
+    border: 2px white solid;
+    color: white;
+    background-color: $corona-blue;
     position: absolute;
-    bottom: 3em;
-    right: 1em;
+    bottom: 14.5em;
+    right: 21em;
     text-align: center;
-
-    h2 {
-      margin: 4px 0;
-    }
   }
 
 }

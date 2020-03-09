@@ -1,6 +1,8 @@
 <!-- http://localhost:3000/group/shared/bzPX9O61t015WMl5CV1PPc+eNkIFFk0E8SptGYU+ePTJrk%2F9FaiiV24bdgunoMR9OH5gDEhMfDFyhKPkPnp%2FsA== -->
 <%= render 'shared/navbar' %>
 
+
+
 <div class="route-view">
 
   <div class="bars-and-map">
@@ -20,7 +22,7 @@
   </div>
 
 </div>
-
+<div class="stop-scrolling">
 <div id="share-button"><i class="fas fa-share-square"></i></div>
 
 <div id="popup-bg" style="width: 100vw; height: 100vh; justify-content: center; align-items: center; padding: 2em; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0; z-index: 2;">
@@ -44,7 +46,7 @@
 <div class="start-link">
   <%= link_to ("<i class='far fa-play-circle'></i> Start BarCrawl").html_safe, unique_group_stop_path(@group.token, 1), :class=>"form-button" %>
 </div>
-
+</div>
 <script>
   function closePopUp() {
     document.getElementById('popup-bg').classList.remove('show-popup');
