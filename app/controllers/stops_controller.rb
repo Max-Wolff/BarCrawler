@@ -26,17 +26,32 @@ class StopsController < ApplicationController
     @route = directions([prev_stop, @stop.bar])
   end
 
+  def select
+    @group = Group.find_by_token(params[:token])
+    @stop = @group.stops.find_by_rank(params[:rank])
+
+    @drinks = []
+    @drinks_object = []
+    Drink.all.each do |drink|
+      @drinks << drink.picture_url
+      @drinks_object << drink
+    end
+  end
+
   def wheel
     @group = Group.find_by_token(params[:token])
     @stop = @group.stops.find_by_rank(params[:rank])
 
     @drinks = []
-    drinks_object = []
-    Drink.all.each do |drink|
+    @drinks_object = []
+
+    params[:drink][:ids].strip.split(' ').each do |id|
+      drink = Drink.find(id)
       @drinks << drink.picture_url
-      drinks_object << drink
+      @drinks_object << drink
     end
+
     @end = rand(360)
-    @selected_drink = drinks_object[@end/(360/drinks_object.length)]
+    @selected_drink = @drinks_object[@end/(360/@drinks_object.length)]
   end
 end
