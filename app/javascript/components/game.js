@@ -4,13 +4,23 @@ const gameCarousel = () => {
 
   games.forEach((game) => {
     game.addEventListener("click", (event) => {
-      const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh" ]
+      const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight", "ninth" ]
       // randomArray
       event.currentTarget.setAttribute("style","display:none;");
       const randomElement = randomArray[Math.floor(Math.random() * randomArray.length)];
       const rand = document.querySelector(`#${randomElement}`);
       rand.setAttribute("style", "display:block");
     });
+
+    // document.getElementById("next-game").addEventListener("click", (event) => {
+    //   const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh" ]
+    //   // randomArray
+    //   debugger
+    //   event.target.setAttribute("style","display:none;");
+    //   const randomElement = randomArray[Math.floor(Math.random() * randomArray.length)];
+    //   const rand = document.querySelector(`#${randomElement}`);
+    //   rand.setAttribute("style", "display:block");
+    // });
   });
 
 

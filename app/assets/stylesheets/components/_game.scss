@@ -18,19 +18,19 @@
   left  : 0;
   width : 100%;
   height: 100%;
-  background : $corona_gold;
+  background: rgba(251, 194, 40, 0.2);
   text-align : center;
   font-size   : 55px;
-  font-family : Nunito;
+  font-family : Lobster;
   font-weight : lighter;
   color       : $corona_blue;
   border-radius : 15px;
-  border: $corona-blue 2px solid;
+  border: $corona-gold 2px solid;
 
 }
 
 .b {
-  // background : $corona_gold;
+  // background : $corona_blue;
 }
 
 #switch {
@@ -82,3 +82,5 @@
 #fifth { display:none; }
 #sixth { display:none; }
 #seventh { display:none; }
+#eight { display:none; }
+#ninth { display:none; }
