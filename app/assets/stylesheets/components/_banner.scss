@@ -1,12 +1,10 @@
 .banner {
   height: 100vh;
   background: linear-gradient(255deg, rgba(30,30,30,0.6) 30%, rgba(46,46,46,0.5) 80%);
-  background-size: cover;
-  object-fit: cover;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
   position: relative;
   overflow: hidden;
 }
@@ -36,11 +34,10 @@
 
 .banner-picture {
   position: absolute;
+  display: block;
   z-index: 0;
   min-width: 100%;
   min-height: 100%;
-  height: auto;
-  width: auto;
   transition: opacity 1.5s ease;
 }
 

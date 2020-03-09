@@ -82,6 +82,7 @@
 
 .home-wrapper {
   width:100%;
+  justify-content: center;
 }
  .home-container {
   flex-direction:column;
@@ -131,6 +132,27 @@
 }
 
 
+.home-container {
+  width: 90vw;
+  justify-content: center;
+}
 
+.home-info {
+  // width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-homepage {
+  width: 70vw;
+}
+
+
+
+.search-bar-homepage .search-form-control .btn {
+  width:25vw;
+  height:7vh;
+
+}
 
 }
