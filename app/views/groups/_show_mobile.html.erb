@@ -4,7 +4,7 @@
   </div>
 
   <div class="tab-content hide-content" id="filters-view">
-    <%= render 'filters' %>
+    <%= render 'mobile-filters' %>
   </div>
 
   <div class="tab-content" id="cards-view">
@@ -13,14 +13,12 @@
     <% end %>
   </div>
 
-  <div class="tab-content hide-content" id="map-view">
-    <div style="width: 100vw; height: 68vh; position: absolute; bottom: 14em;" id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+  <div style="min-width: 100vw; height: 66vh; position: absolute; bottom: 15em;" class="tab-content hide-content" id="secondmap" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <div class="menu-buttons">
     <div class="menu-button" id="button-filters" data-show="filters-view"><i class="fas fa-filter"></i></div>
     <div class="menu-button active-tab" id="button-bars" data-show="cards-view"><i class="fas fa-beer"></i></div>
-    <div class="menu-button" id="button-map" data-show="map-view"><i class="fas fa-map-marked-alt"></i></div>
+    <div class="menu-button" id="button-map" data-show="secondmap"><i class="fas fa-map-marked-alt"></i></div>
   </div>
   <form action="../groups/<%= @group.id %>/edit">
     <input type="hidden" name="bar[ids]" id="bar_ids">

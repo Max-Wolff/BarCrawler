@@ -8,6 +8,7 @@
     justify-content: space-around;
     margin: 0 auto;
     padding: 2em 0;
+    color: $corona-blue;
 
     h5 {
       font-size: 2em;
@@ -49,7 +50,7 @@
     .menu-button {
       background: #EFEEEE;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.6), -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
+      box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.8), -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
       border-radius: 50%;
       width: 80px;
       height: 80px;
@@ -61,9 +62,7 @@
     }
 
     .menu-button.active-tab {
-      // box-shadow: inset 6px 6px 16px 0 rgba(217, 210, 200, 0.6), inset -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
-      background: $corona-blue;
-      color: #EFEEEE;
+      box-shadow: inset 6px 6px 16px 0 rgba(217, 210, 200, 0.8), inset -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
     }
 
     #button-filters {

@@ -28,6 +28,10 @@ const initSecondMap = () => {
 
     map.addControl(new mapboxgl.FullscreenControl());
 
+    map.on('load', function() {
+      map.resize();
+    })
+
     const markers = JSON.parse(mapElement.dataset.markers);
 
     markers.forEach((marker) => {
