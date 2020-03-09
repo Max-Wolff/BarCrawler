@@ -21,9 +21,6 @@ const initMapbox = () => {
       style: 'mapbox://styles/max-wolff/ck7esdnfx1yi41ipoz7de5sg6'
     });
 
-
-    map.addControl(new mapboxgl.GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: true }));
-
     map.addControl(new mapboxgl.NavigationControl());
 
     map.addControl(new mapboxgl.FullscreenControl());
