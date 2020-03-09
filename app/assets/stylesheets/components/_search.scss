@@ -1,9 +1,10 @@
 .search-form-control {
-  position: relative;
+ // position: relative;
+  display:flex;
 }
 
 .search-form-control .btn {
-  position: absolute;
+  // position: absolute;
   top: 8px;
   bottom: 8px;
   right: 8px;
@@ -25,14 +26,23 @@
 .search-bar-homepage {
   // width: 33vw;
   width: 37vw;
-
   .algolia-places {
     margin: 0;
     width: 100%;
   }
   .search-form-control .btn {
+    z-index:1;
     color: white;
     background-color: $corona-blue;
-
+    padding: 0px 28px;
+    font-weight: bold;
   }
+}
+
+.fa-rocket:before {
+    content: "\f135";
+    position: relative;
+    top: 2px;
+    left: 6px;
+    font-size: 18px;
 }

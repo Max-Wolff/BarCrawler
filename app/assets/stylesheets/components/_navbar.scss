@@ -65,6 +65,8 @@
   -ms-user-select: none;
   user-select: none;
   transition: background-color 0.2s ease;
+  border-bottom: 1px solid $corona-blue;
+  border-top: 1px solid $corona-blue;
 }
 
 .arrow-steps .step:after,
