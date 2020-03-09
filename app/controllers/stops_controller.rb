@@ -36,7 +36,7 @@ class StopsController < ApplicationController
       @drinks << drink.picture_url
       drinks_object << drink
     end
-    @end = 170
+    @end = rand(360)
     @selected_drink = drinks_object[@end/(360/drinks_object.length)]
   end
 end

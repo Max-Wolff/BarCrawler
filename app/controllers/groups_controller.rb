@@ -45,6 +45,13 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
+    if request.user_agent =~ /Mobile/
+      params[:bar][:ids].strip.split(' ').each do |id|
+        @bar = Bar.find(id)
+        @bar.selected = true
+        @bar.save
+      end
+    end
   end
 
   def update
