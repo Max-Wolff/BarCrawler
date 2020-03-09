@@ -1,24 +1,26 @@
 <%= render 'shared/navbar' %>
 
-<div class="wrapper">
-    <div class="form-group mr-5">
+<div class="home-wrapper">
+
+<div class="stop-scrolling">
+   <div class="home-wrapper">
+<img class="banner-picture" src="<%= image_path('banner-hands-in-middle.png') %>"alt="" style="z-index: 0">
+    <div class="form-group" style="z-index: 1">
     <div class="header">
-    <h2> Group name</h2>
+    <h4>Your Group Name:</h4>
     </div>
     <%= form_with model: @group, local: true do |form| %>
-      <div class="form-inputs">
+      <div class="form-inputs d-flex">
         <div id="group_name">
-        <%= form.text_field :name, placeholder: "  Enter an epic group name here..." %>
+        <%= form.text_field :name, placeholder: "Try to be creative... ;)" %>
         </div>
       </div>
       <div class="form-actions">
-        <%= form.submit "Create group", class: "btn-home-address btn-home-address:hover"%>
+        <%= form.submit "Start", class: "btn-new-group"%>
       </div>
     <% end %>
     </div>
-    <div class="d-block ml-4">
-    <iframe src="https://giphy.com/embed/Q7AC2zLqBiTMbnRBdH" width="270" height="480" frameBorder="0" class="giphy-embed leon-entrup" allowFullScreen></iframe><p class="d-flex"><a href="https://giphy.com/gifs/Q7AC2zLqBiTMbnRBdH"></a></p>
-    <p style="color: white; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Copyright @BarCrawler</p>
-    </div>
   </div>
+</div>
+
 </div>

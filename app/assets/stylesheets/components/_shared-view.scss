@@ -12,6 +12,8 @@
       height: 100%;
       width: 30%;
       overflow-y: scroll;
+      position: sticky;
+      top: 6px;
 
       .header {
         text-align: center;
@@ -21,6 +23,7 @@
         margin: 0;
         z-index: 1;
         margin-top: 6px;
+        border-bottom: 1px solid $corona-blue;
       }
     }
 
@@ -35,6 +38,7 @@
   box-shadow: 3px 3px 7px $gray-shadow;
   background: white;
   position: relative;
+  border: 1px solid #ccc;
 
   .card-img {
     border-radius: 10px;
@@ -42,6 +46,7 @@
     height: 60%;
     background-size: cover;
     margin-bottom: .5em;
+    border: 1px solid $corona-gold;
   }
 
   .rating-price-info {
@@ -81,15 +86,13 @@
     width: 3em;
     height: 3em;
     border-radius: 50%;
-    border: 1px $corona-blue dashed;
+    border: 2px white solid;
+    color: white;
+    background-color: $corona-blue;
     position: absolute;
-    bottom: 3em;
-    right: 1em;
+    bottom: 14.5em;
+    right: 21em;
     text-align: center;
-
-    h2 {
-      margin: 4px 0;
-    }
   }
 
 }
@@ -188,4 +191,18 @@
   position: fixed;
   bottom: 3em;
   right: 1em;
+}
+
+.page-header {
+  position: fixed;
+  z-index: 1;
+  left: 50vw;
+  top: 7vh;
+  color: $corona-blue;
+  background-color: white;
+  margin: 0px;
+  padding: 0 1%;
+  h3 {
+    font-family: 'Lobster', cursive;
+  }
 }
