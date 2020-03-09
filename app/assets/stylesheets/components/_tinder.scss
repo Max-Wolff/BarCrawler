@@ -1,0 +1,97 @@
+.show-container-mobile {
+  position: relative;
+  height: 100vh;
+
+  .selector-count {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 2em 0;
+
+    h5 {
+      font-size: 2em;
+
+    }
+  }
+
+  #filters-view {
+
+  }
+
+  #cards-view {
+
+    .bar-card {
+      width: 90vw;
+      height: 64vh;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      border-radius: 1%;
+      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+      background-color: white;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+  }
+
+  #map-view {
+
+  }
+
+  .menu-buttons {
+    position: absolute;
+    bottom: 4.9em;
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+
+    .menu-button {
+      background: #EFEEEE;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.6), -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      font-size: 2.5em;
+      color: $corona-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-button.active-tab {
+      // box-shadow: inset 6px 6px 16px 0 rgba(217, 210, 200, 0.6), inset -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
+      background: $corona-blue;
+      color: #EFEEEE;
+    }
+
+    #button-filters {
+
+    }
+
+    #button-bars {
+
+    }
+
+    #button-map  {
+
+    }
+  }
+
+  .create-crawl-button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    padding: 13px;
+    background: $corona-blue;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+  }
+}
+
+.hide-content {
+  display: none;
+}

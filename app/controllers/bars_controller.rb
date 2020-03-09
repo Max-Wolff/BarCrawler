@@ -5,37 +5,37 @@ class BarsController < ApplicationController
 
   def index
     # <<<< FOURSQUARE >>>>>
-    form_params
+    # form_params
 
-    if form_params["commit"] == "Search"
-      foursquare_modified_api_call(form_params)
-      @group = Group.last
-      @group.stops.delete_all
-      @filtered_bars.each do |bar_hash|
-        bar = Bar.create(bar_hash)
-        Stop.create(group: @group, bar: bar)
-      end
-    end
-    # <<<< FOURSQUARE >>>>>
-
-    # <<< WITHOUT FOURSQUARE >>>>
-    # bars = Bar.first(10)
-    # @group = Group.create
-    # bars.each do |bar|
-    #   Stop.create(group: @group, bar: bar)
+    # if form_params["commit"] == "Search"
+    #   foursquare_modified_api_call(form_params)
+    #   @group = Group.last
+    #   @group.stops.delete_all
+    #   @filtered_bars.each do |bar_hash|
+    #     bar = Bar.create(bar_hash)
+    #     Stop.create(group: @group, bar: bar)
+    #   end
     # end
+    # <<<< FOURSQUARE >>>>>
+
+    # <<< WITHOUT FOURSQUARE >>>>
+    bars = Bar.first(10)
+    @group = Group.create
+    bars.each do |bar|
+      Stop.create(group: @group, bar: bar)
+    end
     # <<< WITHOUT FOURSQUARE >>>>
 
     # <<<< FOURSQUARE >>>>>
-    if @group.nil? == true
-      search_params
-      @group = Group.create
-      foursquare_api_call(search_params)
-      @bars_array.each do |bar_hash|
-        bar = Bar.create(bar_hash)
-        Stop.create(group: @group, bar: bar)
-      end
-    end
+    # if @group.nil? == true
+    #   search_params
+    #   @group = Group.create
+    #   foursquare_api_call(search_params)
+    #   @bars_array.each do |bar_hash|
+    #     bar = Bar.create(bar_hash)
+    #     Stop.create(group: @group, bar: bar)
+    #   end
+    # end
     # <<<< FOURSQUARE >>>>>
 
     redirect_to show_group_path(@group)

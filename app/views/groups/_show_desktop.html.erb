@@ -1,0 +1,23 @@
+<div class="stop-scrolling">
+<%= render 'shared/navbar' %>
+
+<div class="bar-selection">
+  <div class="sidebar not-show">
+    <%= render 'filters' %>
+  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="cards-container shift-left">
+    <% @group.bars.each do |bar| %>
+      <%= link_to (render 'shared/bar-card', bar: bar), bar, method: :patch, remote: true %>
+    <% end %>
+  </div>
+</div>
+
+
+  <div class="adjust-position">
+    <%= link_to 'Create BarCrawl', edit_group_path(@group), :class=>"form-button" %>
+    <div class="adjust-selectors d-flex">
+      <h5 style="margin-right: 10px">Selected Bars:</h5><h5 id="selection">0 / 7</h5>
+    </div>
+  </div>
+</div>
