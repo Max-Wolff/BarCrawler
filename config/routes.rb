@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'group/shared/:token', to: 'groups#shared', as: 'unique_group'
   get 'group/shared/:token/:rank', to: 'stops#show', as: 'unique_group_stop'
   get 'group/shared/:token/:rank/wheel', to: 'stops#wheel', as: 'unique_group_stop_wheel'
+  get 'group/shared/:token/:rank/game', to: 'stops#game', as: 'unique_group_stop_game'
   get 'group/:id', to: 'groups#show', as: 'show_group'
   post 'bars', to: 'bars#index', as: 'bars'
 end
