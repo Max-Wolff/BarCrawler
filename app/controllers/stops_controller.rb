@@ -54,4 +54,10 @@ class StopsController < ApplicationController
     @end = rand(360)
     @selected_drink = @drinks_object[@end/(360/@drinks_object.length)]
   end
+
+  def game
+    @group = Group.find_by_token(params[:token])
+    @stop = @group.stops.find_by_rank(params[:rank])
+  end
+
 end
