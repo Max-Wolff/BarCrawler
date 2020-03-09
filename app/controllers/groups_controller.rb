@@ -17,7 +17,8 @@ class GroupsController < ApplicationController
       {
         lat: bar[:latitude],
         lng: bar[:longitude],
-        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
+        image_url: helpers.asset_url('golden-marker-fancy.png')
       }
     end
   end
@@ -32,22 +33,34 @@ class GroupsController < ApplicationController
       {
         lat: bar[:latitude],
         lng: bar[:longitude],
-        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
+        image_url: helpers.asset_url('beer-icon.png')
       }
     end
 
-    barcode = Barby::QrCode.new("https://barcrawler.club/group/shared/#{@group.token}/1", level: :q, size: 10)
+    barcode = Barby::QrCode.new("http://barcrawler.club/group/shared/#{@group.token}/1", level: :q, size: 10)
     base64_output = Base64.encode64(barcode.to_png({ xdim: 5 }))
     @qr_code = "data:image/png;base64,#{base64_output}"
   end
 
   def edit
     @group = Group.find(params[:id])
+    if request.user_agent =~ /Mobile/
+      params[:bar][:ids].strip.split(' ').each do |id|
+        @bar = Bar.find(id)
+        @bar.selected = true
+        @bar.save
+      end
+    end
   end
 
   def update
+    token = ''
+    25.times do
+      token += ('a'..'z').to_a.sample
+    end
     @bars = Group.find(params[:id]).bars.geocoded.where(selected: true)
-    @group = Group.new(token: params[:authenticity_token], name: params[:group][:name])
+    @group = Group.new(token: token, name: params[:group][:name])
 
     scraper = GoogleMapsScraper.new(@bars)
     order = scraper.bar_order[:comb]
@@ -60,6 +73,6 @@ class GroupsController < ApplicationController
     end
 
     @group.save
-    redirect_to unique_group_path(params[:authenticity_token])
+    redirect_to unique_group_path(token)
   end
 end

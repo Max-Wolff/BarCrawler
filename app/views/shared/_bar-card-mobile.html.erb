@@ -1,9 +1,5 @@
-<% if bar.selected %>
-<div data-bar-id="<%= bar.id %>" class="bar-card selected">
-<% else %>
-<div data-bar-id="<%= bar.id %>" class="bar-card">
-<% end %>
-  <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);background-size: cover;background-repeat: no-repeat;"></div>
+<div data-barid="<%= bar.id %>" class="bar-card">
+  <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);background-size: cover;"></div>
   <h4><%= bar[:name] %></h4>
   <p><%= bar[:address] %></p>
   <div class="rating-price-info">
@@ -22,7 +18,7 @@
       <% end %>
     <% end %>
     </p>
-    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until] %></p>
+    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until][5..] %></p>
     <p class="card-price">
       <% if bar[:price].nil? == false %>
         <% bar[:price].to_i.times do %>

@@ -16,17 +16,7 @@ class BarsController < ApplicationController
     #     Stop.create(group: @group, bar: bar)
     #   end
     # end
-    # <<<< FOURSQUARE >>>>>
 
-    # <<< WITHOUT FOURSQUARE >>>>
-    bars = Bar.first(10)
-    @group = Group.create
-    bars.each do |bar|
-      Stop.create(group: @group, bar: bar)
-    end
-    # <<< WITHOUT FOURSQUARE >>>>
-
-    # <<<< FOURSQUARE >>>>>
     # if @group.nil? == true
     #   search_params
     #   @group = Group.create
@@ -37,6 +27,14 @@ class BarsController < ApplicationController
     #   end
     # end
     # <<<< FOURSQUARE >>>>>
+
+    # <<< WITHOUT FOURSQUARE >>>>
+    bars = Bar.first(10)
+    @group = Group.create
+    bars.each do |bar|
+      Stop.create(group: @group, bar: bar)
+    end
+    # <<< WITHOUT FOURSQUARE >>>>
 
     redirect_to show_group_path(@group)
   end

@@ -1,0 +1,27 @@
+#defaultCanvas0 {
+  width: 100%;
+  height: 100%;
+}
+
+.drink-result {
+  position: absolute;
+  bottom: 11%;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: $corona-blue 2px solid;
+  border-radius: 10px;
+  padding: 1em;
+
+  img {
+    margin-bottom: 1em;
+  }
+
+  h4 {
+    white-space: nowrap;
+  }
+}

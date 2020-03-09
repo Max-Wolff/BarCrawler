@@ -17,11 +17,26 @@ class StopsController < ApplicationController
         {
           lat: bar[:latitude],
           lng: bar[:longitude],
-          infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: bar })
+          infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: bar }),
+          image_url: helpers.asset_url("beer-icon.png")
         }
       end
     end
 
     @route = directions([prev_stop, @stop.bar])
+  end
+
+  def wheel
+    @group = Group.find_by_token(params[:token])
+    @stop = @group.stops.find_by_rank(params[:rank])
+
+    @drinks = []
+    drinks_object = []
+    Drink.all.each do |drink|
+      @drinks << drink.picture_url
+      drinks_object << drink
+    end
+    @end = rand(360)
+    @selected_drink = drinks_object[@end/(360/drinks_object.length)]
   end
 end
