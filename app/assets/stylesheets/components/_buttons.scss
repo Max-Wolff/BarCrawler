@@ -15,6 +15,23 @@
   opacity: 0.9;
 }
 
+.btn-new-group {
+  color: white;
+  border: 1px solid $corona-blue;
+  border-radius: 50px;
+  padding: 9px 35px;
+  background: $corona-blue;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.btn-new-group:hover {
+  text-shadow: none;
+  text-decoration: none;
+  color: white;
+  opacity: 0.9;
+}
+
 .btn-home-code {
   color: white;
   border: 1px solid white;
