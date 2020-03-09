@@ -1,11 +1,18 @@
 <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
 
-<%= link_to "Spin Again", unique_group_stop_select_path, :class =>'button-spin' %>
-
-<div class="drink-result" style="display: none;">
-  <img class="drink-res" style="width: 80px; height: auto;" src="<%= @selected_drink.picture_url %>" alt="">
-  <h4 class="drink-res"><%= @selected_drink.name %></h4>
+<div class="drink-selection">
+  <% @drinks_object.each do |drink| %>
+    <div class="drink-container" onclick="updateDrinks(this)">
+      <img class="drink-sel" style="width: 70px; height: auto;" src="<%= drink.picture_url %>" data-drinkid="<%= drink.id %>" alt="">
+      <h5 class="drink-sel"><%= drink.name %></h5>
+    </div>
+  <% end %>
 </div>
+
+<form action="wheel">
+  <input type="hidden" name="drink[ids]" id="drink_ids">
+  <input type="submit" name="commit" value="Start Spinning" class="button-spin" data-disable-with="Create BarCrawl">
+</form>
 
 <script>
   let spin = false;
@@ -13,14 +20,13 @@
   let angle = 0;
   let speed = 0;
   let end = 36;
-  let drinks = JSON.parse('<%= @drinks %>'.replace(/&quot;/g,'"'));
+  let drinks = [];
 
   function setup() {
     createCanvas(windowWidth, windowHeight / 2);
     angleMode(DEGREES);
     imageMode(CENTER);
     textAlign(CENTER);
-    startSpinning();
   }
 
   function draw() {
@@ -68,8 +74,17 @@
     // Check if mouse is inside the button
     speed = 10000;
     // This end variable determines the outcome of the wheel in degrees
-    end = <%= @end %>;
     spin = true;
+  }
+
+  function updateDrinks(elem) {
+    drinks = []
+    document.getElementById('drink_ids').value = ''
+    elem.classList.toggle('selected-drink')
+    document.querySelectorAll('.selected-drink img').forEach((drink) => {
+      drinks.push(drink.src)
+      document.getElementById('drink_ids').value += `${drink.dataset.drinkid} `
+    })
   }
 
   document.querySelector('body').classList.add('stop-scrolling');
