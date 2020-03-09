@@ -7,8 +7,8 @@ const initSecondMap = () => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
     map.fitBounds(bounds, { padding: {
-      top: 70,
-      bottom: 100,
+      top: 120,
+      bottom: 120,
       right: 70,
       left: 70
     }, maxZoom: 15, duration: 0 });

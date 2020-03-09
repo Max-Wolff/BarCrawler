@@ -192,3 +192,17 @@
   bottom: 3em;
   right: 1em;
 }
+
+.page-header {
+  position: fixed;
+  z-index: 1;
+  left: 50vw;
+  top: 7vh;
+  color: $corona-blue;
+  background-color: white;
+  margin: 0px;
+  padding: 0 1%;
+  h3 {
+    font-family: 'Lobster', cursive;
+  }
+}
