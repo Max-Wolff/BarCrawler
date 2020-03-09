@@ -1,14 +1,19 @@
 <!-- http://localhost:3000/group/shared/bzPX9O61t015WMl5CV1PPc+eNkIFFk0E8SptGYU+ePTJrk%2F9FaiiV24bdgunoMR9OH5gDEhMfDFyhKPkPnp%2FsA== -->
 <%= render 'shared/navbar' %>
 
+
+
 <div class="route-view">
+
+  <div class="page-header">
+    <h3><%= @group.name %>'s Barcrawl</h3>
+  </div>
 
   <div class="bars-and-map">
 
     <div class="bars">
       <div class="header">
-        <h1><%= @group.name %></h1>
-        <h3>Your Bars for the Night:</h3>
+        <h4 style="padding-top: 10px">Your Bars for the Night:</h4>
       </div>
       <% @stops.each do |stop| %>
         <%= render 'shared/shared-bar-card', stop: stop %>
@@ -20,13 +25,13 @@
   </div>
 
 </div>
-
+<div class="stop-scrolling">
 <div id="share-button"><i class="fas fa-share-square"></i></div>
 
 <div id="popup-bg" style="width: 100vw; height: 100vh; justify-content: center; align-items: center; padding: 2em; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0; z-index: 2;">
   <div class="share-popup">
     <div class="info-banner">
-      <h1 class="info-banner">Share your BarCrawl with your Friends</h1>
+      <h1 class="info-banner">Share your BarCrawl</h1>
       <i onclick="closePopUp()" id="close-icon" class="fas fa-times"></i>
     </div>
 
@@ -44,7 +49,7 @@
 <div class="start-link">
   <%= link_to ("<i class='far fa-play-circle'></i> Start BarCrawl").html_safe, unique_group_stop_path(@group.token, 1), :class=>"form-button" %>
 </div>
-
+</div>
 <script>
   function closePopUp() {
     document.getElementById('popup-bg').classList.remove('show-popup');

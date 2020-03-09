@@ -1,0 +1,91 @@
+<div class="form-container" style="border: none; background: none;">
+
+  <form action="/bars" accept-charset="UTF-8" method="post" class="simple_form search"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
+
+  <div class="search-form-control form-group" style="margin-bottom: 2em;">
+    <input class="form-control string required simple_form search" type="text" name="address" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
+  </div>
+
+  <div class="checkbox-wrapper" style="justify-content: space-evenly; width: 100%;">
+
+    <div class="checkbox-container" style="display: flex; width: 50%; text-align: center; flex-direction: column; justify-content: center; align-items: center;">
+
+
+      <label for="all_bars" style="width: 80%; height: 80px; display: contents;">
+        <div class="icon-border selected-box" style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 1em;">
+          <i class="fas fa-glass-cheers icons"></i>
+          <span class="descriptors">Bars</span>
+        </div>
+        <input type="checkbox" id="all_bars" name="select_bars" value="4bf58dd8d48988d116941735" style="visibility: hidden; width: 0; height: 0;" checked>
+      </label>
+
+      <label for="all_lounges" style="width: 80%; height: 80px; display: contents;">
+        <div class="icon-border" style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 2em;">
+          <i class="fas fa-glass-martini-alt icons"></i>
+          <span class="descriptors">Lounges</span>
+        </div>
+        <input type="checkbox" id="all_lounges" name="select_lounges" value="4bf58dd8d48988d121941735" style="visibility: hidden; width: 0; height: 0;">
+      </label>
+
+    </div>
+
+    <div class="checkbox-container" style="display: flex; width: 50%; text-align: center; flex-direction: column; justify-content: center; align-items: center;">
+
+      <label for="all_breweries" style="width: 80%; height: 80px; display: contents;">
+        <div class="icon-border" style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 1em;">
+          <i class="fas fa-beer icons"></i>
+          <span class="descriptors">Breweries</span>
+        </div>
+        <input type="checkbox" id="all_breweries" name="select_breweries" value="50327c8591d4c4b30a586d5d" style="visibility: hidden; width: 0; height: 0;">
+      </label>
+
+      <label for="all_nightclubs" style="width: 80%; height: 80px; display: contents;">
+        <div class="icon-border" style="display: flex; flex-direction: column; justify-content: center; margin-bottom: 2em;">
+          <i class="fas fa-compact-disc icons"></i>
+          <span class="descriptors">Nightclubs</span>
+        </div>
+        <input type="checkbox" id="all_nightclubs" name="select_nightclubs" value="4bf58dd8d48988d11f941735" style="visibility: hidden; width: 0; height: 0;">
+      </label>
+
+    </div>
+  </div>
+
+  <fieldset>
+    <div class="radio-container" style="margin-bottom: 2em;">
+      <div style="margin-right: 10%; display: flex;"><input type="radio" name="price_tier" id="least-expensive" value="1" style="margin-right: 7px;">
+        <label for="least-expensive"><i class="fas fa-euro-sign"></i></label>
+      </div>
+
+      <div style="margin-right: 10%; display: flex;"><input type="radio" name="price_tier" id="inexpensive" value="2" checked style="margin-right: 7px;">
+        <label for="inexpensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label>
+      </div>
+
+      <div style="margin-right: 10%; display: flex;"><input type="radio" name="price_tier" id="expensive" value="3" style="margin-right: 7px;">
+        <label for="expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label>
+      </div>
+
+      <div style="display: flex;"><input type="radio" name="price_tier" id="most-expensive" value="4" style="margin-right: 7px;">
+        <label for="most-expensive"><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></label>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="slider-container">
+    <div class="range-slider">
+      <span id="rs-bullet" class="rs-label" style="margin-bottom: 5px; margin-left: -16.4vw; left: 60%;">4</span>
+      <input id="rs-range-line" name="radius" class="rs-range" type="range" value="3" min="1" max="6">
+
+    </div>
+
+    <div class="box-minmax">
+      <span>0.5km</span><span>3km</span>
+    </div>
+
+  </div> <br>
+
+  <div class="d-flex justify-content-center" style="margin-top: -0.8em;">
+    <input type="submit" name="commit" value="Search" data-disable-with="Search Bars" class="form-button">
+  </div>
+</form>
+
+</div>

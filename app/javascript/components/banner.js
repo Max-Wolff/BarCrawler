@@ -16,8 +16,10 @@ const bannerCarousel = () => {
 
     setInterval(function() {
       changeBanner()
-    }, 4000);
+    }, 6000);
   }
 }
 
 export { bannerCarousel };
+
+
