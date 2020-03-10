@@ -9,8 +9,9 @@ class StopsController < ApplicationController
 
     if params[:rank] == '1'
       prev_stop = {latitude: 52.5125277, longitude: 13.387167799999999}
-      @markers = [{ lat: prev_stop[:latitude], lng: prev_stop[:longitude], infoWindow: render_to_string(partial: "shared/current_location") }]
-      @markers << { lat: @stop.bar[:latitude], lng: @stop.bar[:longitude], infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: @stop.bar }) }
+      raise
+      @markers = [{ lat: prev_stop[:latitude], lng: prev_stop[:longitude], infoWindow: render_to_string(partial: "shared/current_location"), image_url: helpers.asset_url('beer-icon.png') }]
+      @markers << { lat: @stop.bar[:latitude], lng: @stop.bar[:longitude], infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: @stop.bar }), image_url: helpers.asset_url('beer-icon.png') }
     else
       prev_stop = @group.stops.find_by_rank(params[:rank].to_i - 1).bar
       @markers = [prev_stop, @stop.bar].map do |bar|
