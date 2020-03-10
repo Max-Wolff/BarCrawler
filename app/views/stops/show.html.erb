@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Join my BarCrawl!" %>
+<% content_for :meta_description, "My group is #{@group.name} and we will go to #{@group.stops.count} bars tonight!" %>
+
 <% if mobile_device == "mobile" %>
   <%= render "shared/nav_during_crawl", group: @group, stop: @stop, route: @route, markers: @markers %>
 <% else %>
