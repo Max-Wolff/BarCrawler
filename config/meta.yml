@@ -1,0 +1,5 @@
+meta_product_name: "BarCrawler"
+meta_title: "BarCrawler - Find the perfect route for an epic night out!"
+meta_description: "Organize your own BarCrawl and share it with your friends. Amazing drinking experience guaranteed!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@barcrawler" # required for Twitter Cards
