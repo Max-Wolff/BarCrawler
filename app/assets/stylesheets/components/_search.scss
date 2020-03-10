@@ -34,15 +34,15 @@
     z-index:1;
     color: white;
     background-color: $corona-blue;
-    padding: 0px;
-    padding-right:5px;
-    width:20%;
-
+    padding: 0px 28px;
+    font-weight: bold;
   }
 }
 
-
-
-
-
-
+.fa-rocket:before {
+    content: "\f135";
+    position: relative;
+    top: 2px;
+    left: 6px;
+    font-size: 18px;
+}

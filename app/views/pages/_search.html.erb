@@ -1,10 +1,9 @@
 <form novalidate="novalidate" class="simple_form search" action="/bars" accept-charset="UTF-8" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="utf8" type="hidden" value="&#x2713;"/>
   <div class="search-form-control form-group" style="text-align: left;">
     <input class="form-control string required" type="text" name="search" id="search_query" placeholder="Type in address..."/>
     <button name="button" type="submit" class="btn btn-flat" data-method="post">
-      <i class="fas "></i> Create Crawl
-    </button>
+     <span class="d-flex">Start <i class="fas fa-rocket"></i></span>
   </div>
 </form>
