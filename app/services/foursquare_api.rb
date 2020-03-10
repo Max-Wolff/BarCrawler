@@ -38,7 +38,11 @@ def foursquare_api_call(params)
       if defined?(details.hours)
         weekly_opening_hours = details.hours.timeframes[0].days
         open_until = details.hours.status
-        open_hours_until = "Until " + open_until.scan(/\d\W\d\d.../)[0]
+        if open_until.scan(/\d\W\d\d.../)[0].nil? == false
+          open_hours_until = "Until " + open_until.scan(/\d\W\d\d.../)[0]
+        else
+          open_hours_until = open_until.split().last
+        end
         open_today = details.hours.timeframes[0].includesToday
       else
         weekly_opening_hours = "Mo-So"

@@ -219,10 +219,11 @@
 .page-header {
   position: fixed;
   z-index: 1;
-  left: 50vw;
+  left: 55vw;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   top: 7vh;
   color: $corona-blue;
-  background-color: white;
+  background-color: transparent;
   margin: 0px;
   padding: 0 1%;
   h3 {
