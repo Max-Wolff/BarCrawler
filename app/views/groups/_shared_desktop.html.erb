@@ -1,6 +1,5 @@
 <!-- http://localhost:3000/group/shared/bzPX9O61t015WMl5CV1PPc+eNkIFFk0E8SptGYU+ePTJrk%2F9FaiiV24bdgunoMR9OH5gDEhMfDFyhKPkPnp%2FsA== -->
 <%= render 'shared/navbar' %>
-
 <div class="route-view">
   <div class="page-header">
     <h3><%= @group.name %>'s Barcrawl</h3>
@@ -8,7 +7,7 @@
   <div class="bars-and-map">
 
     <div class="bars">
-        <div class="header">
+        <div class="header-shared">
         <h4 style="padding-top: 10px">Your Bars for the Night:</h4>
       </div>
       <% @stops.each do |stop| %>
