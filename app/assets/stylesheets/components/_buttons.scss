@@ -110,3 +110,59 @@
   }
 }
 
+.button-game {
+  color: $corona-blue;
+  border: 1px solid $corona-gold;
+  border-radius: 50px;
+  padding: 9px 35px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  background: rgba(251, 194, 40, 0.4);
+  position: absolute;
+  bottom: 6em;
+  padding: .5em;
+  font-size: 1.5em;
+  left: 20%;
+  right: -5%;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+
+  &:hover {
+    background: $corona-gold;
+    color: $corona-blue;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+
+.button-spin-crawl {
+  color: $corona-blue;
+  border: 1px solid $corona-gold;
+  border-radius: 50px;
+  padding: 9px 35px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  background: rgba(251, 194, 40, 0.4);
+  position: absolute;
+  bottom: 6em;
+  padding: .5em;
+  font-size: 1.5em;
+  left: 20%;
+  right: -27%;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+
+  &:hover {
+    background: $corona-gold;
+    color: $corona-blue;
+  }
+
+  p {
+    margin: 0;
+  }
+}

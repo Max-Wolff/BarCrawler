@@ -1,10 +1,19 @@
+.header-shared {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-bottom: 1px solid $corona-blue;
+  text-align: center;
+  padding-top: 10px;
+}
+
 .route-view {
   height: 150vh;
   width: 100vw;
 
   .bars-and-map {
     width: 100%;
-    height: 100%;
+    // height: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -27,8 +36,14 @@
       }
     }
 
+
+
   }
 }
+
+
+
+
 
 .shared-bar-card {
   height: 300px;
@@ -99,6 +114,7 @@
 
 .show-popup {
   display: flex !important;
+  position: fixed !important;
 }
 
 #popup-bg {
@@ -107,13 +123,17 @@
   .share-popup {
     background: white;
     border-radius: 10px;
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 100%;
+    border: 1px solid black;
+    background: rgb(240, 240, 240);
 
     .info-banner {
-      padding-top: .2em;
+      padding-top: 0.5em;
       position: relative;
       text-align: center;
+      padding-bottom: 0.5em;
+      color: $corona-blue;
 
       #close-icon {
         position: absolute;
@@ -121,6 +141,7 @@
         right: .5em;
         font-size: 3em;
         cursor: pointer;
+        color: $corona-blue;
       }
     }
 
@@ -133,6 +154,8 @@
         height: 3em;
         display: inline-flex;
         justify-content: center;
+        margin-bottom: 5em;
+
 
         input {
           flex-grow: 9;
