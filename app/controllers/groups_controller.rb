@@ -72,6 +72,11 @@ class GroupsController < ApplicationController
       stop.save
     end
 
+    Bar.where(selected: true).each do |bar|
+      bar.selected = false
+      bar.save
+    end
+
     @group.save
     redirect_to unique_group_path(token)
   end
