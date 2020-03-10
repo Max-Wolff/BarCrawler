@@ -18,7 +18,7 @@
     overflow-y: hidden !important;
     overflow-x: hidden !important;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -57,5 +57,12 @@
     font-size: 20px;
   }
 
+  .page-header {
+  position: sticky;
+  z-index: 1;
+  left: auto;
+  top: 1vh;
+  width: 90%;
+}
 
 }
