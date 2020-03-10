@@ -9,11 +9,8 @@
 }
 
  .header {
-    width:60vh;
-    margin-bottom: 1em;
-    // background-color:#FCC228;
-    // border: 1px solid ;
-    // border-radius: 25px;
+    width:80vh;
+    margin: 0 auto;
   }
 
 .form-group h4 {
@@ -43,7 +40,9 @@
 }
 
 .form-group {
-  margin-bottom: 8px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .radio-container {
