@@ -20,6 +20,9 @@
       <% unless stop.rank == @last_stop %>
         <%= link_to ("<i class='fas fa-forward'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank + 1)) %>
       <% end %>
+      <% if stop.rank == @last_stop %>
+        <%= link_to ("<i class='fas fa-chart-line'></i>").html_safe, unique_group_leaderboard_path %>
+      <% end %>
       <h2>Bar <%= stop.rank%> / <%= @last_stop%></h2>
     </div>
   </div>
