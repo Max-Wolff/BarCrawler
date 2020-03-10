@@ -150,12 +150,36 @@
 
 .search-bar-homepage {
   width: 70vw;
+  // align-items: baseline;
+   // justify-content: center;
+   // align-content: baseline;
+
 }
 
 
+.search-form-control {
+ width: 70vw;
+  // position: fixed;
+  // vertical-align: top;
+  flex-direction: vertical;
+  // align-items: center;
+  justify-content: center;
+}
 
-.search-bar-homepage .search-form-control .btn {
-  width:25vw;
+.form-control {
+  width:70vw;
+  margin-left: 11.5em;
+
+}
+
+
+.search-bar-homepage .btn {
+  z-index: 0;
+  // align-self: center;
+  // align-self: baseline;
+  margin-top: 5em;
+   margin-right: 15em;
+  width:230vw;
   height:7vh;
 
 }
