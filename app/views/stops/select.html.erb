@@ -34,6 +34,13 @@
       document.querySelector('.drink-result').style = 'display: flex'
     }
     background(244);
+    if (document.querySelectorAll('.selected-drink').length == 0) {
+      fill(0);
+      textSize(54);
+      text('Please select your Drinks', windowWidth/2, 200);
+      textSize(90);
+      text('↓', windowWidth/2, 300);
+    }
     wheel(speed, end);
     speed *= .95;
     if (speed < 5 && spin == true) {
@@ -71,7 +78,6 @@
   }
 
   function startSpinning() {
-    // Check if mouse is inside the button
     speed = 10000;
     // This end variable determines the outcome of the wheel in degrees
     spin = true;
