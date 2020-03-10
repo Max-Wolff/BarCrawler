@@ -1,4 +1,8 @@
-<%= render 'shared/navbar' %>
+<% if mobile_device == "mobile" %>
+  <%= render 'shared/navbar_mobile' %>
+<% else %>
+  <%= render 'shared/navbar' %>
+<% end %>
 
 <div class="home-wrapper">
 
