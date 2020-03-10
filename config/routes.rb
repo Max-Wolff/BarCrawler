@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:new, :create, :edit, :update]
 
   get 'group/shared/:token', to: 'groups#shared', as: 'unique_group'
+  get 'group/shared/:token/leaderboard', to: 'groups#leaderboard', as: 'unique_group_leaderboard'
   get 'group/shared/:token/:rank', to: 'stops#show', as: 'unique_group_stop'
   get 'group/shared/:token/:rank/wheel', to: 'stops#wheel', as: 'unique_group_stop_wheel'
   get 'group/shared/:token/:rank/game', to: 'stops#game', as: 'unique_group_stop_game'
