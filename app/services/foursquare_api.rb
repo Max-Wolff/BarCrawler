@@ -30,10 +30,10 @@ def foursquare_api_call(params)
     if defined?(details.attributes.groups[0].items[0].priceTier)
       price_tier = details.attributes.groups[0].items[0].priceTier
     else
-      price_tier = [1, 2].sample
+      price_tier = [1, 2, 3].sample
     end
 
-    if price_tier <= 2
+    if price_tier <= 3
 
       if defined?(details.hours)
         weekly_opening_hours = details.hours.timeframes[0].days
