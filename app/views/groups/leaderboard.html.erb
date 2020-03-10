@@ -1,0 +1,65 @@
+<div class="leaderboard">
+  <h2 class="leaderboard-header"><%= @group.name %>'s Barcrawl</h2>
+  <h3 class="leaderboard-sub-header">Your Evening:</h3>
+
+  <p class="leaderboard-summary">You visited <span><%= @stops.count %></span> Bars tonight and had a total of <span><%= @drink_stops.count %></span> drinks.</p>
+
+  <div class="leaderboard-chart">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <div class="leaderboard-table">
+    <% @stops.each do |stop| %>
+      <h2><%= stop.rank %>. <%= stop.bar.name %></h2>
+      <div class="drinks-leaderboard">
+        <% stop.drink_stops.each do |ds| %>
+          <%= render 'shared/drink-card', drink: ds.drink %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+      labels: JSON.parse('<%= @stops.map { |stop| stop.bar.name } %>'.replace(/&quot;/g,'"')),
+      datasets: [{
+        backgroundColor: '#FCC228',
+        borderColor: '#0C223F',
+        data: JSON.parse('<%= @stops.map { |stop| stop.drink_stops.count } %>'.replace(/&quot;/g,'"'))
+      }]
+    },
+
+    // Configuration options go here
+    options: {
+      legend: {
+        display: false
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem) {
+            return tooltipItem.yLabel;
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            stepSize: 1,
+            min: 0,
+            max: <%= @max_drinks + 1 %>
+          }
+        }]
+      }
+    }
+  });
+</script>
