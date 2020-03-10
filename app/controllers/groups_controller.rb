@@ -77,6 +77,8 @@ class GroupsController < ApplicationController
       bar.save
     end
 
+    @group.distance = scraper.bar_order[:dist]
+
     @group.save
     redirect_to unique_group_path(token)
   end
