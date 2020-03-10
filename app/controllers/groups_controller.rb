@@ -75,4 +75,11 @@ class GroupsController < ApplicationController
     @group.save
     redirect_to unique_group_path(token)
   end
+
+  def leaderboard
+    @group = Group.find_by_token(params[:token])
+    @drink_stops = @group.drink_stops
+    @stops = @group.stops
+    @max_drinks = @group.stops.map { |stop| @drink_stops.where(stop: stop).count }.sort.last
+  end
 end

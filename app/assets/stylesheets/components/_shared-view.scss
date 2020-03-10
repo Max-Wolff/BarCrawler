@@ -1,3 +1,12 @@
+.header-shared {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-bottom: 1px solid $corona-blue;
+  text-align: center;
+  padding-top: 10px;
+}
+
 .route-view {
   height: 150vh;
   width: 100vw;

@@ -1,0 +1,39 @@
+.leaderboard {
+  width: 100%;
+  padding: 1em;
+  color: $corona-blue;
+
+  .leaderboard-header {
+    margin: 5% 0 .1em 10%;
+  }
+
+  .leaderboard-sub-header {
+    margin: 0 0 .5em 10%;
+  }
+
+  .leaderboard-summary {
+    padding: 1em 0;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+
+    span {
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+
+  .leaderboard-chart {
+    padding: 1em 0;
+    border-bottom: 1px solid #CCC;
+  }
+
+  .leaderboard-table {
+    padding: 1em 0;
+    border-bottom: 1px solid #CCC;
+
+    .drinks-leaderboard {
+      display: flex;
+      overflow-x: scroll;
+    }
+  }
+}

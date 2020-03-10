@@ -53,6 +53,7 @@ class StopsController < ApplicationController
 
     @end = rand(360)
     @selected_drink = @drinks_object[@end/(360/@drinks_object.length)]
+    DrinkStop.create(drink: @selected_drink, stop: @stop)
   end
 
   def game
