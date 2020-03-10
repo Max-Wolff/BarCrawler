@@ -114,6 +114,7 @@
 
 .show-popup {
   display: flex !important;
+  position: fixed !important;
 }
 
 #popup-bg {
@@ -122,13 +123,17 @@
   .share-popup {
     background: white;
     border-radius: 10px;
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 100%;
+    border: 1px solid black;
+    background: rgb(240, 240, 240);
 
     .info-banner {
-      padding-top: .2em;
+      padding-top: 0.5em;
       position: relative;
       text-align: center;
+      padding-bottom: 0.5em;
+      color: $corona-blue;
 
       #close-icon {
         position: absolute;
@@ -136,6 +141,7 @@
         right: .5em;
         font-size: 3em;
         cursor: pointer;
+        color: $corona-blue;
       }
     }
 
@@ -148,6 +154,8 @@
         height: 3em;
         display: inline-flex;
         justify-content: center;
+        margin-bottom: 5em;
+
 
         input {
           flex-grow: 9;
@@ -194,7 +202,7 @@
   border-radius: 50%;
   position: fixed;
   bottom: 1em;
-  right: 7em;
+  right: 4.5em;
 
   &:hover {
     opacity: 0.9;

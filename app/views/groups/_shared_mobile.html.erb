@@ -28,7 +28,7 @@
 <div id="popup-bg" style="width: 100vw; height: 100vh; justify-content: center; align-items: center; padding: 2em; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0; z-index: 2;">
   <div class="share-popup">
     <div class="info-banner">
-      <h1 class="info-banner">Share your BarCrawl with your Friends</h1>
+      <h3 class="info-banner">Share your BarCrawl with your Friends</h3>
       <i onclick="closePopUp()" id="close-icon" class="fas fa-times"></i>
     </div>
 
@@ -37,14 +37,13 @@
         <input type="text" value="http://barcrawler.club/group/shared/<%= @group.token %>/1" id="group-link">
         <button onclick="copyLink()" id="copy-button"><i class="far fa-copy"></i> Copy</button>
       </div>
-      <h4><a class="form-button" href="mailto:?subject=Let's%20go%20on%20a%20BarCrawl%20tonight%21&amp;body=You%20can%20join%20my%20group%20<%= @group.name %>%20by%20clicking%20here%3A%0D%0A%0D%0Ahttp%3A%2F%2Fbarcrawler.club%2Fgroup%2Fshared%2F<%= @group.token %>/1"><i class="far fa-envelope"></i> Email</a></h4>
       <img src="<%= @qr_code %>" alt="">
     </div>
   </div>
 </div>
 
 <div class="start-link">
-  <%= link_to ("<i class='far fa-play-circle'></i> Start BarCrawl").html_safe, unique_group_stop_path(@group.token, 1), :class=>"form-button" %>
+  <%= link_to ("<i class='far fa-play-circle'></i> Start").html_safe, unique_group_stop_path(@group.token, 1), :class=>"form-button" %>
 </div>
 
 <script>
