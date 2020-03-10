@@ -19,6 +19,7 @@
 .footer-navigation {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 10px;
   a {
     color: white;
@@ -28,7 +29,9 @@
   }
   h2 {
     color: white;
-    font-weight: bolder;
+    font-weight: lighter;
+    font-size: 28px;
+    padding-top: 0.2em;
   }
 }
 
