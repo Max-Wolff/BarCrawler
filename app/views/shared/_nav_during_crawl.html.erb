@@ -2,24 +2,26 @@
   <h2> <i class="fas fa-map-marked-alt"></i> <%= stop.bar.name %> </h2>
 </div>
 
+
 <div class="navigation-display">
   <div class="map-placeholder" id="secondmap" style="width: 100vw; height: 40vh;" data-markers="<%= markers.to_json %>" data-route="<%= route.to_json %>" data-mapbox-api-key="<%= ENV['SECOND_MAP_API_KEY'] %>"></div>
   <%= render 'shared/shared-bar-card', stop: stop %>
 </div>
 
-<div class="spinner">
-  <%= link_to ("<i class='fas fa-spinner' ></i> Get a round of drinks").html_safe, unique_group_stop_select_path, :style=>"display: block; text-align: center; text-decoration: none; color: #0C223F;" %>
-</div>
-
 <div class="footer-during-crawl">
   <div class="footer-navigation">
+    <%= image_tag "icon-favicon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to ("<i class='fas fa-spinner' ></i> Get a round of drinks").html_safe, unique_group_stop_select_path, :style=>"display: block; text-decoration: none; color: #0C223F;", :class=>"dropdown-item" %>
+        <%= link_to ("<i class='fas fa-dice-two' ></i> Play drinking game").html_safe, unique_group_stop_game_path, :style=>"display: block; text-decoration: none; color: #0C223F;", :class=>"dropdown-item" %>
+      </div>
     <% unless stop.rank == 1 %>
       <%= link_to ("<i class='fas fa-backward'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank - 1)) %>
     <% end %>
-    <h2>Bar <%= stop.rank%> / <%= @last_stop%></h2>
     <% unless stop.rank == @last_stop %>
       <%= link_to ("<i class='fas fa-forward'></i>").html_safe, unique_group_stop_path(@group.token, (stop.rank + 1)) %>
     <% end %>
+    <h2>Bar <%= stop.rank%> / <%= @last_stop%></h2>
   </div>
 </div>
 
