@@ -1,31 +1,19 @@
 
 const gameCarousel = () => {
-  const games = document.querySelectorAll(".game-element")
 
-  games.forEach((game) => {
-    game.addEventListener("click", (event) => {
-      const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh" ]
-      // randomArray
-      event.currentTarget.setAttribute("style","display:none;");
+  const delayInMilliseconds = 3000; //n second
+  setTimeout(function() {
+    const button = document.getElementById("next-game")
+    button.addEventListener("click", (event) => {
+      const game = document.querySelector(".active-game")
+      game.classList.remove("active-game")
+      const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight", "ninth" ]
       const randomElement = randomArray[Math.floor(Math.random() * randomArray.length)];
       const rand = document.querySelector(`#${randomElement}`);
-      rand.setAttribute("style", "display:block");
+      rand.classList.add("active-game");
     });
-  });
-
-
-// $('#toggle > span').click(function() {
-//     var ix = $(this).index();
-
-//     $('#first').toggle( ix === 0 );
-//     $('#second').toggle( ix === 1 );
-//     $('#third').toggle( ix === 2 );
-//     $('#fourth').toggle( ix === 3 );
-//     $('#fifth').toggle( ix === 4 );
-//     $('#sixth').toggle( ix === 5 );
-//     $('#seventh').toggle( ix === 6 );
-// });
-
+    //your code to be executed after n second
+  }, delayInMilliseconds);
 }
 
 export { gameCarousel };

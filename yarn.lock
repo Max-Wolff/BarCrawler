@@ -7316,6 +7316,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typer-js@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/typer-js/-/typer-js-5.0.2.tgz#a8676c0dcefa84b2fdd2688310950ee80b9de133"
+  integrity sha512-Zra3DWD8ve6mxDMvyg6fRF2n+F5Ro8Jt8x119jwT/nRNq0rXi/ehn3Mr1L119X5cZoaSPp01QPjC+Rs3ePMacQ==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"

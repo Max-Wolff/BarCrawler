@@ -8,6 +8,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { changeActiveTab } from '../components/change_tab';
 import { initSecondMap } from '../plugins/init_secondmap';
 import { gameCarousel } from '../components/game';
+import { typerJs } from '../components/typer';
 
 
 bannerCarousel();
@@ -18,3 +19,4 @@ initMapbox();
 changeActiveTab();
 initSecondMap();
 gameCarousel();
+typerJs();
