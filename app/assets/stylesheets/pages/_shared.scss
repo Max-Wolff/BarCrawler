@@ -1,0 +1,61 @@
+@media(min-width: 100px) and (max-width: 576px) {
+
+  .route-view {
+    height: 150vh;
+  }
+
+  .route-view .bars-and-map {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    // height: 100vh;
+  }
+
+
+  .route-view .bars-and-map .bars {
+    width: 90%;
+    // height: 150vh;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+  }
+   .map-placeholder {
+
+   }
+
+   #secondmap{
+
+  }
+
+
+  .route-view .bars-and-map .bars .header {
+    width: 90%;
+    z-index: 0;
+    align-self: center;
+  }
+
+  .arrow-steps .step {
+    font-size: 11px;
+    padding-bottom: 1.2em;
+    padding-top: 1em;
+    padding-left: 0.2em;
+    text-align: right;
+  }
+
+  .shared-bar-card .ranking {
+    width:2rem;
+    height:2rem;
+    right: 0.4em;
+    bottom: 3.2em;
+  }
+
+  .shared-bar-card .ranking h2 {
+    font-size: 20px;
+  }
+
+
+}
