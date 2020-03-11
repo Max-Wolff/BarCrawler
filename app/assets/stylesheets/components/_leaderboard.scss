@@ -1,39 +1,99 @@
 .leaderboard {
   width: 100%;
-  padding: 1em;
-  color: $corona-blue;
+  // padding: 1em;
+  // color: $corona-blue;
 
   .leaderboard-header {
-    margin: 5% 0 .1em 10%;
+    // margin: 5% 0 .1em 10%;
+    width: auto;
+    // margin: 0 auto;
+    background-color: $corona-blue;
+    color: white;
+    // border: 1px solid $corona-blue;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+
+  .leaderboard-header h2{
+    font-family: "Nunito";
   }
 
   .leaderboard-sub-header {
-    margin: 0 0 .5em 10%;
+    // margin: 0 0 .5em 10%;
+    width: auto;
+    // margin: 0 auto;
+    background-color: white;
+    // border: 1px solid $corona-blue;
+    border: 1px solid $corona-blue;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  .leaderboard-summary {
-    padding: 1em 0;
-    border-bottom: 1px solid #CCC;
-    border-top: 1px solid #CCC;
 
+
+  .leaderboard-summary {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    background-color: white;
+    border: 1px solid $corona-blue;
+    border-radius: 10px;
+    // border: 1px solid $corona-blue;
+    text-align: center;
+    padding-top: 10px;
+    padding: 1em 0;
+    // border-bottom: 1px solid #CCC;
+    // border-top: 1px solid #CCC;
     span {
       font-size: 1em;
       font-weight: bold;
     }
   }
 
+.leaderboard .leaderboard-summary p{
+    font-family: "sans-serif";
+  }
+
   .leaderboard-chart {
     padding: 1em 0;
     border-bottom: 1px solid #CCC;
+    background-color: white;
+    // border: 1px solid $corona-blue;
   }
 
   .leaderboard-table {
-    padding: 1em 0;
-    border-bottom: 1px solid #CCC;
-
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    // padding: 1em 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    margin-top: 2vh;
+    background-color: white;
+    border: 1px solid $corona-blue;
+    border-radius: 10px;
+    // border-bottom: 1px solid #CCC;
+    text-align: left;
     .drinks-leaderboard {
       display: flex;
       overflow-x: scroll;
     }
+  }
+
+
+  .leaderboard-table h2{
+    font-size: 1.5em;
+    font-family:"Helvetica";
+  }
+
+  .leaderboard-image {
+    width: 100%;
+    height: auto;
+    margin-top:1em;
   }
 }
