@@ -19,7 +19,7 @@ class BarsController < ApplicationController
 
     # if @group.nil? == true
     #   search_params
-    #   @group = Group.create
+    #   @group = Group.create(location: search_params[:search])
     #   foursquare_api_call(search_params)
     #   @bars_array.each do |bar_hash|
     #     bar = Bar.create(bar_hash)
@@ -29,8 +29,10 @@ class BarsController < ApplicationController
     # <<<< FOURSQUARE >>>>>
 
     # <<< WITHOUT FOURSQUARE >>>>
+    search_params
+
     bars = Bar.first(10)
-    @group = Group.create
+    @group = Group.create(location: search_params[:search])
     bars.each do |bar|
       Stop.create(group: @group, bar: bar)
     end
