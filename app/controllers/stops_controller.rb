@@ -9,16 +9,16 @@ class StopsController < ApplicationController
 
     if params[:rank] == '1'
       prev_stop = {latitude: 52.5125277, longitude: 13.387167799999999}
-      @markers = [{ lat: prev_stop[:latitude], lng: prev_stop[:longitude], infoWindow: render_to_string(partial: "shared/current_location"), image_url: helpers.asset_url('beer-icon.png') }]
-      @markers << { lat: @stop.bar[:latitude], lng: @stop.bar[:longitude], infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: @stop.bar }), image_url: helpers.asset_url('beer-icon.png') }
+      @markers = [{ lat: prev_stop[:latitude], lng: prev_stop[:longitude], infoWindow: render_to_string(partial: "shared/current_location"), image_url: helpers.asset_url("route-1.png") }]
+      @markers << { lat: @stop.bar[:latitude], lng: @stop.bar[:longitude], infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: @stop.bar }), image_url: helpers.asset_url("route-2.png") }
     else
       prev_stop = @group.stops.find_by_rank(params[:rank].to_i - 1).bar
-      @markers = [prev_stop, @stop.bar].map do |bar|
+      @markers = [prev_stop, @stop.bar].each_with_index.map do |bar, index|
         {
           lat: bar[:latitude],
           lng: bar[:longitude],
           infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: bar }),
-          image_url: helpers.asset_url("beer-icon.png")
+          image_url: helpers.asset_url("route-#{index + 1}.png")
         }
       end
     end
