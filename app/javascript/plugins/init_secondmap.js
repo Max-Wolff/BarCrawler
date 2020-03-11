@@ -43,8 +43,8 @@ const initSecondMap = () => {
       element.className = 'marker';
       element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
-      element.style.width = '60px';
-      element.style.height = '60px';
+      element.style.width = '45px';
+      element.style.height = '45px';
 
       new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
@@ -76,7 +76,7 @@ const initSecondMap = () => {
           },
           'paint': {
             'line-color': '#FCC228',
-            'line-width': 8
+            'line-width': 3
           }
         });
       });
