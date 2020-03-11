@@ -1,66 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>This one is on us! (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body {
+      background-color: #F4F4F4;
+      margin: 1em;
+      width: 100vw;
+      height: 100vh;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .dialog {
+      font-family: arial, sans-serif;
+      width: 100%;
+      height: 40%;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .barcrawler-game {
+      height: 60%;
+      margin-left: -.5em;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
+  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <h1>Oops! There went something wrong on our servers.</h1>
+      <p>Probably Gerwin fucked up again with Heroku...</p>
+      <h3>But don't worry. We can help you!</h3>
+      <h3>To create a BarCrawl, simply click <a href="http://www.barcrawler.club/">HERE</a></h3>
+      <h3>You can also waste your time on this page below:</h3>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+
+  <div class="barcrawler-game">
+    <canvas id="gameCanvas" width="375" height="400"></canvas>
+  </div>
+
+  <script>
+    let playerX = 30;
+    let playerY = 250;
+    let obstacle = false;
+    let obstacleX = -30;
+    let obstacleH = 30;
+    let score = 0;
+    let firstAction = false;
+    let jump = false;
+
+    let gameCanvas = document.getElementById("gameCanvas");
+    let ctx = gameCanvas.getContext("2d");
+    ctx.font = "30px Arial";
+    const backgroundColor = "#F4F4F4";
+
+    const drawBackground = () => {
+      // Canvas Setup
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+      ctx.fillStyle = '#0C223F';
+      ctx.fillRect(0, 280, gameCanvas.width, 10);
+      if(firstAction == false) {
+        ctx.font = "30px Arial";
+        ctx.fillStyle = '#0C223F';
+        ctx.fillText('Tap to jump', 110, 150);
+      }
+    }
+
+    const drawPlayer = () => {
+      ctx.fillStyle = '#0C223F';
+      ctx.strokeStyle = '#999';
+      ctx.fillRect(playerX, playerY, 30, 30);
+    }
+
+    const spawnObstacle = () => {
+      if(Math.random()*100 < 2 && obstacle == false && firstAction == true) {
+        obstacleX = gameCanvas.width;
+        if(Math.random()*100 < 40) {
+          obstacleH = 30;
+        } else {
+          obstacleH = 60;
+        }
+        obstacle = true;
+      }
+      if(obstacleX < -30 && obstacle == true) {
+        obstacle = false;
+        score += obstacleH;
+      }
+    }
+
+    const drawObstacle = () => {
+      ctx.fillStyle = '#0C223F';
+      ctx.strokeStyle = '#999';
+      ctx.fillRect(obstacleX, (280 - obstacleH), 30, obstacleH);
+      obstacleX -= 4;
+    }
+
+    const playerJump = () => {
+      firstAction = true
+      jump = true;
+    };
+
+    const playerMove = () => {
+      if(playerY < 250 && jump == false) {
+        playerY += 6;
+      } else if(playerY > 100 && jump == true) {
+        playerY -= 7;
+      } else if(jump == true) {
+        jump = !jump
+      }
+    };
+
+    const playerDead = () => {
+      if (obstacleX > playerX && obstacleX < playerX + 30 && playerY > (280 - obstacleH)) {
+        gameOver();
+        clearInterval(game);
+      }
+    }
+
+    const update = () => {
+      drawBackground();
+      drawPlayer();
+      playerMove();
+      playerDead();
+      spawnObstacle();
+      drawObstacle();
+      ctx.fillText(`${score}`, 10, 40);
+      // moveSnake();
+    }
+
+    const gameOver = () => {
+      ctx.font = "40px Arial";
+      ctx.fillText('Game Over', 90, 150);
+    }
+
+    drawBackground();
+    gameCanvas.addEventListener("click", playerJump);
+    let game = setInterval(() => {
+        update()
+      }, 12);
+  </script>
 </body>
 </html>
