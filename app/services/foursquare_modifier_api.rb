@@ -35,7 +35,7 @@ def foursquare_modified_api_call(params)
 
   final_ids.delete("")
 
-  limit_of_items = 12 / final_ids.count
+  limit_of_items = 20 / final_ids.count
 
   @all_locations = []
 

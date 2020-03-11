@@ -12,7 +12,7 @@ def foursquare_api_call(params)
   json_hash = doc["features"]
   coordinates = json_hash[0]["center"].reverse().join(",")
 
-  @locations = @client.search_venues(:ll => coordinates, :radius => '2000', :limit => '12', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
+  @locations = @client.search_venues(:ll => coordinates, :radius => '2000', :limit => '20', :categoryId => '4bf58dd8d48988d116941735', :v => '20200101')
 
   @locations.venues.each do |location|
 
@@ -53,7 +53,7 @@ def foursquare_api_call(params)
       if defined?(details.rating)
         rating = details.rating / 2
       else
-        rating = [1, 2, 3, 4, 5].sample
+        rating = [3, 4, 5].sample
       end
 
       if defined?(details.bestPhoto)
