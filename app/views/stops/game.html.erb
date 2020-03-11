@@ -30,4 +30,11 @@
 
 <script>
   document.querySelector('body').classList.add('stop-scrolling');
+
+  const btn = document.getElementById("next-game");
+
+  btn.addEventListener("click", (event) => {
+    const audio = new Audio('<%= audio_path('saufen')%>');
+    audio.play();
+  });
 </script>
