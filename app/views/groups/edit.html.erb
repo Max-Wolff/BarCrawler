@@ -11,22 +11,26 @@
 <img class="banner-picture" src="<%= image_path('banner-hands-in-middle.png') %>"alt="" style="z-index: 0">
     <div class="form-group" style="z-index: 1">
     <div class="header">
-      <h4 id="typer-js"></h4>
+      <h4>Please type in an <em style="color: red;">epic</em> group name:</h4>
     </div>
     <%= form_with model: @group, local: true do |form| %>
       <div class="form-inputs d-flex">
         <div id="group_name">
-        <%= form.text_field :name, placeholder: "Try to be creative... ;)" %>
+        <%= form.text_field :name, placeholder: "Type a creative name... ;)" %>
         </div>
       </div>
       <div class="form-actions">
         <%= form.submit "Start", class: "btn-new-group"%>
       </div>
     <% end %>
+    <div class="header d-flex justify-content-center mt-3">
+      <div>
+    <h4 class="typer-js"></h4>
+    </div>
+    </div>
     </div>
   </div>
 </div>
-
 </div>
 
 <div id="popup-bg" style="width: 100vw; height: 100vh; justify-content: center; align-items: center; padding: 2em; background-color: rgba(0, 0, 0, 0.7); position: absolute; top: 0; left: 0; z-index: 2;">

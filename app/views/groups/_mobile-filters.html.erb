@@ -3,7 +3,7 @@
   <form action="/bars" accept-charset="UTF-8" method="post" class="simple_form search"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TaVVviL2jE0ZXBDgnoAcFBxTeKpgH0j8p/UbBVxRm/xiIfpE+Q4JtwV4TZxLB3uS0cMhhj78erO3/Z5jDo6UrA==">
 
   <div class="search-form-control form-group" style="margin-bottom: 2em;">
-    <input class="form-control string required simple_form search" type="text" name="address" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
+    <input class="form-control string required simple_form search" type="text" value="<%= @group.location %>" name="address" id="search_query" accept-charset="UTF-8" placeholder="Search for adress...">
   </div>
 
   <div class="checkbox-wrapper" style="justify-content: space-evenly; width: 100%;">
