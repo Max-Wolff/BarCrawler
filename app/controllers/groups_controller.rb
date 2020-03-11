@@ -14,12 +14,21 @@ class GroupsController < ApplicationController
     @bars = @group.bars
 
     @markers = @bars.map do |bar|
+      if ["bar", "brewery", "nightclub", "lounge"].include?(bar.category.downcase)
       {
         lat: bar[:latitude],
         lng: bar[:longitude],
         infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
         image_url: helpers.asset_url("#{bar.category.downcase}-icon.png")
       }
+      else
+        {
+          lat: bar[:latitude],
+          lng: bar[:longitude],
+          infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
+          image_url: helpers.asset_url("bar-icon.png")
+        }
+      end
     end
   end
 
