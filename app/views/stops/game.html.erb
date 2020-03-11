@@ -34,7 +34,7 @@
   const btn = document.getElementById("next-game");
 
   btn.addEventListener("click", (event) => {
-    const audio = new Audio(<%= audio_path(saufen.mp3)%>);
+    const audio = new Audio('<%= audio_path(saufen.mp3)%>');
     debugger
     audio.play();
   });
