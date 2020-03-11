@@ -36,10 +36,10 @@
     background(244);
     if (document.querySelectorAll('.selected-drink').length == 0) {
       fill(0);
-      textSize(54);
-      text('Please select your Drinks', windowWidth/2, 200);
-      textSize(90);
-      text('↓', windowWidth/2, 300);
+      textSize(windowWidth/12);
+      text('Please select your Drinks', windowWidth/2, 150);
+      textSize(windowWidth/7);
+      text('↓', windowWidth/2, 260);
     }
     wheel(speed, end);
     speed *= .95;
