@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
     @stops = @group.stops.order(rank: :asc)
     @route = directions(@bars)
 
-    @markers = @stops.each_with_index.map do |bar, index|
+    @markers = @stops.each_with_index.map do |stop, index|
       {
         lat: stop.bar[:latitude],
         lng: stop.bar[:longitude],
