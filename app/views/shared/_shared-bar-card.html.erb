@@ -4,7 +4,6 @@
 
   <h4><%= bar[:name].truncate(30) %></h4>
   <p><%= bar[:address].truncate(40) %></p>
-  <% raise %>
   <div class="rating-price-info">
     <p class="card-rating">
       <% bar[:rating].to_i.times do %>
