@@ -135,6 +135,16 @@
       // get swipe direction, left (-1) or right (1)
       let dirX = e.deltaX < 0 ? -1 : 1
 
+      if (propX > 0.1) {
+        document.querySelectorAll('.tinder-icon-select')[document.querySelectorAll('.tinder-icon-select').length - 1].classList.add('show-icon');
+        document.querySelectorAll('.tinder-icon-reject')[document.querySelectorAll('.tinder-icon-reject').length - 1].classList.remove('show-icon');
+      }
+
+      if (propX < -0.1) {
+        document.querySelectorAll('.tinder-icon-select')[document.querySelectorAll('.tinder-icon-select').length - 1].classList.remove('show-icon');
+        document.querySelectorAll('.tinder-icon-reject')[document.querySelectorAll('.tinder-icon-reject').length - 1].classList.add('show-icon');
+      }
+
       // calculate rotation, between 0 and +/- 45 deg
       let deg = this.isDraggingFrom * dirX * Math.abs(propX) * 45
 
@@ -202,6 +212,8 @@
           }, 200)
 
         } else {
+          document.querySelectorAll('.tinder-icon-select')[document.querySelectorAll('.tinder-icon-select').length - 1].classList.remove('show-icon');
+          document.querySelectorAll('.tinder-icon-reject')[document.querySelectorAll('.tinder-icon-reject').length - 1].classList.remove('show-icon');
 
           // reset cards position
           this.topCard.style.transform =

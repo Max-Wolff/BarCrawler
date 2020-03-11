@@ -24,7 +24,7 @@ bar_10 = Bar.create(name: "Schwelgerei",rating: 5, address:"Flughafenstr. 49, 12
 group_1 = Group.create(name:"Guys just want to have fun",token:"")
 group_4 = Group.create(name:"The champions",token:"")
 
-Drink.create(name: 'Beer', picture_url: 'https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c099.png')
+Drink.create(name: 'Beer', picture_url: 'https://cdn.pixabay.com/photo/2018/08/21/21/49/beer-3622237_960_720.png')
 Drink.create(name: 'Tequila', picture_url: 'https://i.dlpng.com/static/png/5544536-tequila-png-abeoncliparts-cliparts-vectors-for-free-2019-tequila-shots-png-1200_1200_preview.png')
 Drink.create(name: 'Berliner Luft', picture_url: 'https://www.konsum-leipzig.de/media/image/b9/7c/b2/DV019_4013228325202_VORvRXP9oGhXhcN0_600x600.png')
 Drink.create(name: 'Jägermeister', picture_url: 'https://www.konsum-leipzig.de/media/image/4b/4c/4a/DV019_4067700011015_VORxaFVIK0yWdPT2.png')

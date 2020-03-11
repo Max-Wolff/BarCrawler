@@ -94,3 +94,27 @@
 .hide-content {
   display: none;
 }
+
+.tinder-icon-select {
+  color: $green;
+  position: absolute;
+  font-size: 15em;
+  top: 20%;
+  left: 15%;
+  display: none;
+  opacity: 0.5;
+}
+
+.tinder-icon-reject {
+  color: $red;
+  position: absolute;
+  font-size: 15em;
+  top: 20%;
+  left: 25%;
+  display: none;
+  opacity: 0.5;
+}
+
+.show-icon {
+  display: block;
+}

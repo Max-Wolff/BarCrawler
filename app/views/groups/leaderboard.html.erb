@@ -2,7 +2,7 @@
   <h2 class="leaderboard-header"><%= @group.name %>'s Barcrawl</h2>
   <h3 class="leaderboard-sub-header">Your Evening:</h3>
 
-  <p class="leaderboard-summary">You visited <span><%= @stops.count %></span> Bars tonight and had a total of <span><%= @drink_stops.count %></span> drinks.</p>
+  <p class="leaderboard-summary">You visited <span><%= @stops.count %></span> Bars tonight, walked a total distance of <span><%= (@group.distance * 1.4).to_i %></span> meters in <span><%= (@group.distance / 60) %></span> minutes and had a total of <span><%= @drink_stops.count %></span> drinks.</p>
 
   <div class="leaderboard-chart">
     <canvas id="myChart"></canvas>

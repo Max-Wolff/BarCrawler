@@ -7,7 +7,7 @@ if (rangeSlider) {
 
 function showSliderValue() {
   if (rangeBullet) {
-    rangeBullet.innerHTML = rangeSlider.value / 2;
+    rangeBullet.innerHTML = rangeSlider.value / 2 + 0.5;
     const bulletPosition = (rangeSlider.value / rangeSlider.max);
     rangeBullet.style.left = (bulletPosition * 100) + "%";
   }
