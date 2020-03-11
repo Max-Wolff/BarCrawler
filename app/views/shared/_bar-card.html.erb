@@ -4,8 +4,8 @@
 <div data-bar-id="<%= bar.id %>" class="bar-card">
 <% end %>
   <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);background-size: cover;background-repeat: no-repeat;"></div>
-  <h4><%= bar[:name] %></h4>
-  <p><%= bar[:address] %></p>
+  <h4><%= bar[:name].truncate(30) %></h4>
+  <p><%= bar[:address].truncate(40) %></p>
   <div class="rating-price-info">
     <p class="card-rating">
     <% bar[:rating].to_i.times do %>
