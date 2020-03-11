@@ -19,7 +19,8 @@ class BarsController < ApplicationController
 
     if @group.nil? == true
       search_params
-      @group = Group.create(location: search_params[:search])
+      # @group = Group.create(location: search_params[:search])
+      @group = Group.create
       foursquare_api_call(search_params)
       @bars_array.each do |bar_hash|
         bar = Bar.create(bar_hash)

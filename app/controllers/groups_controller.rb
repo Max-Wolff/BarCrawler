@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
           lat: bar[:latitude],
           lng: bar[:longitude],
           infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
-          image_url: helpers.asset_url("question-marker.png")
+          image_url: helpers.asset_url("bar-icon.png")
         }
       end
     end
