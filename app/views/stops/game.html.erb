@@ -30,11 +30,20 @@
 
 <script>
 
-  document.getElementById("next-game").onclick = function() {playSong()};
-
+window.onload =  function() {
+// use var to check if a link has been clicked
+var clickedOnce = false;
+document.getElementById("next-game").onclick = function() {
+  // will only run when clickedOnce is false
+  if(!clickedOnce) {
+    clickedOnce = true;
+    playSong();
+  }
+}
   function playSong() {
     const audio = new Audio('<%= audio_path('saufen.mp3')%>');
     audio.play();
   }
+}
 
 </script>
