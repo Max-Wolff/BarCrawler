@@ -53,7 +53,7 @@
     if (navigator.share) {
       navigator.share({
         title: 'BarCrawler - <%= @group.name %>',
-        url: 'http://barcrawlers.herokuapp.com/group/shared/<%= @group.token %>/1'
+        url: 'http://barcrawler.club/group/shared/<%= @group.token %>/1'
       })
       .catch(console.error);
     } else {

@@ -26,14 +26,14 @@ class GroupsController < ApplicationController
   def shared
     @group = Group.find_by_token(params[:token])
     @bars = @group.bars
-    @stops = @group.stops
+    @stops = @group.stops.order(rank: :asc)
     @route = directions(@bars)
 
-    @markers = @bars.each_with_index.map do |bar, index|
+    @markers = @stops.each_with_index.map do |bar, index|
       {
-        lat: bar[:latitude],
-        lng: bar[:longitude],
-        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar }),
+        lat: stop.bar[:latitude],
+        lng: stop.bar[:longitude],
+        infoWindow: render_to_string(partial: "info_window", locals: { bar: stop.bar }),
         image_url: helpers.asset_url("marker-#{index + 1}.png")
       }
     end
