@@ -1,29 +1,26 @@
+.loader-container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .beer-container {
+    height: 13vh;
+    width: 9vh;
+    position: relative;
+  }
+}
+
 #beer_text {
-  font-family: $headers-font;
+  width: 70vw;
+  font-family: sans-serif;
   color: white;
-  letter-spacing: 20px;
+  letter-spacing: 10px;
+  text-align: center;
   font-size: 30px;
-  position: absolute;
-  top: 195px;
-  left: 370px;
 }
-
-#dribbble {
-  color: #EC4E8B;
-}
-
-#hetic {
-  color: #6FB400;
-}
-
-#text {
-  position: absolute;
-  top: 335px;
-  left: 150px;
-  font-family: $headers-font;
-  color: white;
-}
-
 
 #glass {
   width: 70px;
@@ -33,8 +30,7 @@
   border-top: none;
   border-radius: 0 0 10px 10px;
   position: absolute;
-  top: 200px;
-  left: 200px;
+  top: 14px;
   overflow: hidden;
   transform: rotate(-20deg);
   -webkit-animation: glass 10s infinite;
@@ -46,8 +42,8 @@
     background: transparent;
     border: solid 3.5px white;
     position: absolute;
-    top: 192px;
-    left: 270px;
+    top: 10px;
+    left: 65px;
     border-radius: 0 16px 16px 0;
     border-left: none;
     transform: rotate(-20deg);
@@ -59,7 +55,7 @@
   height: 84px;
   background: transparent;
   position: absolute;
-  left: 6px;
+  left: 3px;
   top: 0px;
   border-radius: 0 0 5px 5px;
   overflow: hidden;
@@ -79,8 +75,6 @@
 
 #mousse_1 {
   position: absolute;
-  top: 192px;
-  left: 198px;
   z-index: 4;
 
   &::before {
@@ -108,8 +102,6 @@
 
 #mousse_2 {
   position: absolute;
-  top: 192px;
-  left: 212px;
   z-index: 4;
 
   &::before {
@@ -137,8 +129,7 @@
 
 #mousse_3 {
   position: absolute;
-  top: 192px;
-  left: 228px;
+  left: 19px;
   z-index: 4;
 
   &::before {
@@ -166,8 +157,7 @@
 
 #mousse_4 {
   position: absolute;
-  top: 192px;
-  left: 242px;
+  left: 31px;
   z-index: 4;
 
   &::before {
@@ -195,8 +185,7 @@
 
 #mousse_5 {
   position: absolute;
-  top: 192px;
-  left: 257px;
+  left: 52px;
   z-index: 4;
   -webkit-animation: mousse 10s infinite;
 
@@ -213,8 +202,7 @@
 
 #mousse_volante {
   position: absolute;
-  top: 185px;
-  left: 212px;
+  left: 10px;
   z-index: 4;
 
   &::before {
@@ -242,8 +230,8 @@
 
 #mousse_interieur {
   position: absolute;
-  top: 255px;
-  left: 218px;
+  top: 80px;
+  left: 10px;
   z-index: 4;
   opacity: 0.9;
 
@@ -272,8 +260,8 @@
 
 #mousse_interieur_2 {
   position: absolute;
-  top: 235px;
-  left: 225px;
+  top: 80px;
+  left: 22px;
   z-index: 4;
   opacity: 0.9;
 
@@ -302,8 +290,8 @@
 
 #mousse_interieur_3 {
   position: absolute;
-  top: 245px;
-  left: 232px;
+  top: 80px;
+  left: 32px;
   z-index: 4;
   opacity: 0.9;
 
@@ -332,8 +320,8 @@
 
 #mousse_interieur_4 {
   position: absolute;
-  top: 241px;
-  left: 238px;
+  top: 80px;
+  left: 45px;
   z-index: 4;
   opacity: 0.9;
 
