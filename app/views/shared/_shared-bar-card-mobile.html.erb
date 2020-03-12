@@ -1,0 +1,30 @@
+<div class="shared-bar-card-mobile">
+  <% bar = stop.bar %>
+  <div class="card-img" style="background-image: url(<%= bar[:photo_url] %>);"></div>
+
+  <h4><%= bar[:name].truncate(23) %></h4>
+  <p><%= bar[:address].truncate(35) %></p>
+  <div class="rating-price-info">
+    <p class="card-rating">
+      <% bar[:rating].to_i.times do %>
+        <i class="fas fa-beer full-beer"></i>
+      <% end %>
+      <% if (bar[:rating] % 1) >= 0.5 %>
+        <i class="fas fa-beer half-beer"></i>
+        <% (4 - bar[:rating].to_i).times do %>
+          <i class="fas fa-beer empty-beer"></i>
+        <% end %>
+      <% else %>
+        <% (5 - bar[:rating].to_i).times do %>
+          <i class="fas fa-beer empty-beer"></i>
+        <% end %>
+      <% end %>
+    </p>
+    <p class="card-open-until"><i class="far fa-clock"></i> <%= bar[:open_until] %></p>
+  </div>
+
+  <div class="ranking">
+    <h4 style="position: absolute;top: 0.3em;left: 0.3em;">#<%= stop.rank %></h4>
+  </div>
+
+</div>
