@@ -76,7 +76,7 @@ const initSecondMap = () => {
           },
           'paint': {
             'line-color': '#FCC228',
-            'line-width': 3
+            'line-width': 5
           }
         });
       });
