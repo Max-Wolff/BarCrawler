@@ -38,8 +38,18 @@
     transition-timing-function: ease;
 
     &.shift-left {
-      left: 3.5vw;
-      width: 95vw;
+      left: 4em;
+      width: 96vw;
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      font-size: 5em;
+      bottom: 1.3em;
+      right: 0.2em;
+      color: $corona-gold;
+      opacity: 0.9;
+      transition: opacity 1s;
     }
   }
 }

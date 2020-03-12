@@ -6,10 +6,11 @@
     <%= render 'filters' %>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div class="cards-container shift-left">
+  <div class="cards-container shift-left" onscroll="removeArrow()">
     <% @group.bars.each do |bar| %>
       <%= link_to (render 'shared/bar-card', bar: bar), bar, method: :patch, remote: true %>
     <% end %>
+    <i class="fas fa-arrow-circle-right scroll-indicator"></i>
   </div>
 </div>
 
@@ -21,3 +22,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  function removeArrow() {
+    document.querySelector('.scroll-indicator').style.opacity = '0';
+  }
+</script>
