@@ -76,6 +76,8 @@
   background-color: white;
   border-right: 1px solid $corona-blue;
   transition: transform .5s ease;
+  overflow-y: scroll;
+  padding-bottom: 3em;
 
   .search-form-control .form-control {
     height: 3.0rem;
@@ -142,7 +144,7 @@ label {
   position: absolute;
   cursor: pointer;
   top: .1em;
-  right: 4px;
+  right: 11px;
   font-size: 1.7em;
 
   .apple-hamburger {
@@ -198,7 +200,7 @@ label {
 }
 
 .sidebar.not-show {
-  width: 3em;
+  width: 4em;
   border-right: 1px solid $corona-blue;
 
   #toggle-sidebar {
