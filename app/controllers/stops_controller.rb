@@ -8,7 +8,7 @@ class StopsController < ApplicationController
     @last_stop = @group.stops.count
 
     if params[:rank] == '1'
-      prev_stop = {latitude: 52.5125277, longitude: 13.387167799999999}
+      prev_stop = {latitude: 52.536821, longitude: 13.394921}
       @markers = [{ lat: prev_stop[:latitude], lng: prev_stop[:longitude], infoWindow: render_to_string(partial: "shared/current_location"), image_url: helpers.asset_url("route-1.png") }]
       @markers << { lat: @stop.bar[:latitude], lng: @stop.bar[:longitude], infoWindow: render_to_string(partial: "groups/info_window", locals: { bar: @stop.bar }), image_url: helpers.asset_url("route-2.png") }
     else
