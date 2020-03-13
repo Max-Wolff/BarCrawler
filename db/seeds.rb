@@ -34,7 +34,7 @@ Drink.create(name: 'Berliner Luft', picture_url: 'https://www.konsum-leipzig.de/
 Drink.create(name: 'Jägermeister', picture_url: 'https://www.konsum-leipzig.de/media/image/4b/4c/4a/DV019_4067700011015_VORxaFVIK0yWdPT2.png')
 Drink.create(name: 'Vodka', picture_url: 'https://www.konsum-leipzig.de/media/image/6e/f3/0a/DV019_7312040017683_VORBgtJOyFcjUX8v_600x600.png')
 Drink.create(name: 'Pina Colada', picture_url: 'https://magazin.spiritsdealer.de/wp-content/uploads/ultimatepinacolada-1.png')
-Drink.create(name: 'Water', picture_url: 'https://www.pngarts.com/files/4/Water-Bottle-Transparent-Background-PNG.png')
+Drink.create(name: 'Water', picture_url: 'https://img.pngio.com/water-bottle-png-transparent-images-png-all-waterbottle-png-320_320.png')
 Drink.create(name: 'Whiskey', picture_url: 'https://www.konsum-leipzig.de/media/image/57/3e/56/DV019_5010196091008_VOR_600x600.png')
 Drink.create(name: 'Baileys', picture_url: 'https://www.baileys.com/images/home-element.png')
 Drink.create(name: 'Gin Tonic', picture_url: 'https://cdn.shopify.com/s/files/1/1119/0054/articles/Cucumber_Gin_Summer_Cocktail_1024x.png?v=1519482729')
