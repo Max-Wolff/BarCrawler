@@ -9,7 +9,7 @@ const gameCarousel = () => {
       button.addEventListener("click", (event) => {
         const game = document.querySelector(".active-game")
         game.classList.remove("active-game")
-        const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight", "ninth", "tenth", "eleventh", "twelfth", "thirteenth" ]
+        const randomArray = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eight", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth" ]
         const randomElement = randomArray[Math.floor(Math.random() * randomArray.length)];
         const rand = document.querySelector(`#${randomElement}`);
         rand.classList.add("active-game");
